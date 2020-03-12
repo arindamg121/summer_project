@@ -1,0 +1,27 @@
+C:\Users\acer\Documents\Visual Studio 2013\Projects_\KnowYourResult\KnowYourResult\bin\KnowYourResult.dll.config
+C:\Users\acer\Documents\Visual Studio 2013\Projects_\KnowYourResult\KnowYourResult\bin\KnowYourResult.dll
+C:\Users\acer\Documents\Visual Studio 2013\Projects_\KnowYourResult\KnowYourResult\bin\KnowYourResult.pdb
+C:\Users\acer\Documents\Visual Studio 2013\Projects_\KnowYourResult\KnowYourResult\obj\Debug\KnowYourResult.csprojResolveAssemblyReference.cache
+C:\Users\acer\Documents\Visual Studio 2013\Projects_\KnowYourResult\KnowYourResult\obj\Debug\KnowYourResult.dll
+C:\Users\acer\Documents\Visual Studio 2013\Projects_\KnowYourResult\KnowYourResult\obj\Debug\KnowYourResult.pdb
+C:\Users\acer\Documents\Visual Studio 2013\Projects_\KnowYourResult\KnowYourResult\bin\itextsharp.dll
+C:\Users\acer\Documents\Visual Studio 2013\Projects_\KnowYourResult\KnowYourResult\bin\itextsharp.xml
+C:\Users\HP\Desktop\KnowYourResult\KnowYourResult\bin\KnowYourResult.dll.config
+C:\Users\HP\Desktop\KnowYourResult\KnowYourResult\bin\KnowYourResult.dll
+C:\Users\HP\Desktop\KnowYourResult\KnowYourResult\bin\KnowYourResult.pdb
+C:\Users\HP\Desktop\KnowYourResult\KnowYourResult\bin\itextsharp.xml
+C:\Users\HP\Desktop\KnowYourResult\KnowYourResult\obj\Debug\KnowYourResult.csprojResolveAssemblyReference.cache
+C:\Users\HP\Desktop\KnowYourResult\KnowYourResult\obj\Debug\KnowYourResult.dll
+C:\Users\HP\Desktop\KnowYourResult\KnowYourResult\obj\Debug\KnowYourResult.pdb
+C:\Users\LENOVO\Desktop\KnowYourResult\KnowYourResult\KnowYourResult\bin\KnowYourResult.dll
+C:\Users\LENOVO\Desktop\KnowYourResult\KnowYourResult\KnowYourResult\bin\KnowYourResult.pdb
+C:\Users\LENOVO\Desktop\KnowYourResult\KnowYourResult\KnowYourResult\bin\itextsharp.xml
+C:\Users\LENOVO\Desktop\KnowYourResult\KnowYourResult\KnowYourResult\obj\Debug\KnowYourResult.csprojResolveAssemblyReference.cache
+C:\Users\LENOVO\Desktop\KnowYourResult\KnowYourResult\KnowYourResult\obj\Debug\KnowYourResult.dll
+C:\Users\LENOVO\Desktop\KnowYourResult\KnowYourResult\KnowYourResult\obj\Debug\KnowYourResult.pdb
+D:\result analysis\KnowYourResult\KnowYourResult\KnowYourResult\bin\KnowYourResult.dll
+D:\result analysis\KnowYourResult\KnowYourResult\KnowYourResult\bin\KnowYourResult.pdb
+D:\result analysis\KnowYourResult\KnowYourResult\KnowYourResult\bin\itextsharp.xml
+D:\result analysis\KnowYourResult\KnowYourResult\KnowYourResult\obj\Debug\KnowYourResult.csprojResolveAssemblyReference.cache
+D:\result analysis\KnowYourResult\KnowYourResult\KnowYourResult\obj\Debug\KnowYourResult.dll
+D:\result analysis\KnowYourResult\KnowYourResult\KnowYourResult\obj\Debug\KnowYourResult.pdb

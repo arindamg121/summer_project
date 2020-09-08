@@ -15,12 +15,11 @@
        }
    </style>
 </head>
-<body style="background-image:url('images.jpg'); background-repeat:no-repeat; ">
+<body style="background-image:url('home.jpg'); background-repeat:no-repeat; height:100px; width:500px ">
     <form id="form1" runat="server">
         <div class="container">
-        <div class ="container-fluid" style="font-style: normal; font-weight: bold; font-size: large; font-family: Castellar; /*color: #000099;*/ text-transform: capitalize; /*background-color: #CCCCCC;*/ /*background-image: url('39441118-education-wallpapers.jpg');*/" title="KnowYourResult" >
-             <h1>Result </h1>
-             <h1>Analysis</h1>
+        <div class ="container-fluid" style="font-style: normal; font-weight: bold; font-size: large; font-family: Linotte; /*color: #d9ecf2;*/ text-transform: capitalize; /*background-color: #1aa6b7;*/" title="KnowYourResult" >
+             <h1 style="font-family: 'Linotte'; color: #ffffff">Generate Your Results</h1>
              <p class="text-center" id="b"><a href="GetResult.aspx" class="btn btn-info" role="button">Get Started</a></p>   
             </div>  
        </div>     

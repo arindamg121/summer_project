@@ -13,23 +13,23 @@ namespace KnowYourResult
 {
     public partial class GetResult : System.Web.UI.Page
     {
-        FileInfo file1 = new FileInfo(@"D:\result.csv");
+        FileInfo file1 = new FileInfo(@"E:\summerp\result.csv");
         StreamWriter writ;
-        StreamReader read=new StreamReader(@"D:\shift1.txt");
-        FileInfo file2 = new FileInfo(@"D:\shift1_1.csv");
+        StreamReader read=new StreamReader(@"E:\summerp\shift1.txt");
+        FileInfo file2 = new FileInfo(@"E:\summerp\shift1_1.csv");
         StreamWriter writ1;
 
-        StreamReader read1 = new StreamReader(@"D:\shift2.txt");
-        FileInfo file3 = new FileInfo(@"D:\shift22.csv");
+        StreamReader read1 = new StreamReader(@"E:\summerp\shift2.txt");
+        FileInfo file3 = new FileInfo(@"E:\summerp\shift22.csv");
         StreamWriter writ2;
 
-        FileInfo summary = new FileInfo(@"D:\summary.csv");
+        FileInfo summary = new FileInfo(@"E:\summerp\summary.csv");
         StreamWriter sumwrite;
         
-        FileInfo summary1 = new FileInfo(@"D:\summary_shift1.csv");
+        FileInfo summary1 = new FileInfo(@"E:\summerp\summary_shift1.csv");
         StreamWriter sumwrite1;
         
-        FileInfo summary2 = new FileInfo(@"D:\summary_shift2.csv");
+        FileInfo summary2 = new FileInfo(@"E:\summerp\summary_shift2.csv");
         StreamWriter sumwrite2;
         
         

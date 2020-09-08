@@ -12,17 +12,18 @@
         .container {
         margin-top:100px;
         margin-left:auto;
-
         }
+        .con {
+        color:white;
+	}
     </style>
 </head>
-<body style="background-image:url('cabackground-green.jpg');">
+<body style="background-image:url('results.jpg');">
   <form id="form1" runat="server">
         <div class="container">
-            <p style="text-decoration:solid;font-family:'Courier New';"><b>Select a Result pdf from above </b><asp:ListBox ID="ListBox1" runat="server" Width="300px"></asp:ListBox> 
-            </p><br />
-            <br />
-            <div>        
+	<div class="con">
+            <p style="text-decoration:solid;font-family:'Linotte';"><b>Select a Result pdf from above </b></div><asp:ListBox ID="ListBox1" runat="server" Width="300px"></asp:ListBox> 
+            </p>
                 <!--<p><b>Upload a Result pdf if you can't find your's on the list</b>    <asp:FileUpload ID="FileUpload1"  runat="server" /></p>-->
             <br />
                 <p>
@@ -41,6 +42,7 @@
                 <p>
                     <asp:Button ID="Button3" runat="server" CssClass="btn btn-primary" Text="Shift 2" OnClick="Button3_Click3" />
                 </p>
+		</div>
             </div>
        </div>
   </form>

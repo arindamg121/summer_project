@@ -26,6 +26,13 @@ namespace KnowYourResult
         FileInfo summary = new FileInfo(@"D:\summary.csv");
         StreamWriter sumwrite;
         
+        FileInfo summary1 = new FileInfo(@"D:\summary_shift1.csv");
+        StreamWriter sumwrite1;
+        
+        FileInfo summary2 = new FileInfo(@"D:\summary_shift2.csv");
+        StreamWriter sumwrite2;
+        
+        
         string[] a;
         string[] b;
         string filecontent = null, filecontent1 = null;
@@ -77,81 +84,35 @@ namespace KnowYourResult
 
                 r.setSubjects(ListBox1.SelectedItem.Text);
 
-                filecontent = read.ReadLine();
-
-                while (filecontent != null)
-                {
-                    texts += filecontent + " ";
-                    filecontent = read.ReadLine();
-                }
-                a = texts.Split(' ');
-                
-                filecontent1 = read1.ReadLine();
-
-                while (filecontent1 != null)
-                {
-                    texts1 += filecontent1 + " ";
-                    filecontent1 = read1.ReadLine();
-                }
-                b = texts1.Split(' ');
                 sumwrite = summary.CreateText();
 
                 writ = file1.CreateText();
-                writ1 = file2.CreateText();
-                writ2 = file3.CreateText();
-
-
+               
                 writ.Write("," + "," + "," + "," + "," + ",");
-                writ1.Write("," + "," + "," + "," + "," + ",");
-                writ2.Write("," + "," + "," + "," + "," + ",");
-
+               
                 writ.WriteLine("DEMO RESULT");
-                writ1.WriteLine("First SHIFT RESULT");
-                writ2.WriteLine("Second SHIFT RESULT");
-
+               
                 writ.Write("SEAT NUMBER" + ",");
-                writ1.Write("SEAT NUMBER" + ",");
-                writ2.Write("SEAT NUMBER" + ",");
-
+               
                 writ.Write("NAME OF STUDENT" + ",");
-                writ1.Write("NAME OF STUDENT" + ",");
-                writ2.Write("NAME OF STUDENT" + ",");
-
+               
                 writ.Write(r.subject1 + "," + "," + "," + "," + "," + "," + ",");
-                writ1.Write(r.subject1 + "," + "," + "," + "," + "," + "," + ",");
-                writ2.Write(r.subject1 + "," + "," + "," + "," + "," + "," + ",");
-
+               
                 writ.Write(r.subject2 + "," + "," + "," + "," + "," + "," + ",");
-                writ1.Write(r.subject2 + "," + "," + "," + "," + "," + "," + ",");
-                writ2.Write(r.subject2 + "," + "," + "," + "," + "," + "," + ",");
-
+               
                 writ.Write(r.subject3 + "," + "," + "," + "," + "," + "," + ",");
-                writ1.Write(r.subject3 + "," + "," + "," + "," + "," + "," + ",");
-                writ2.Write(r.subject3 + "," + "," + "," + "," + "," + "," + ",");
-
+               
                 writ.Write(r.subject4 + "," + "," + "," + "," + "," + "," + ",");
-                writ1.Write(r.subject4 + "," + "," + "," + "," + "," + "," + ",");
-                writ2.Write(r.subject4 + "," + "," + "," + "," + "," + "," + ",");
-
+               
                 writ.Write(r.subject5 + "," + "," + "," + "," + "," + "," + ",");
-                writ1.Write(r.subject5 + "," + "," + "," + "," + "," + "," + ",");
-                writ2.Write(r.subject5 + "," + "," + "," + "," + "," + "," + ",");
-
+               
                 writ.Write(r.lab1 + "," + "," + "," + "," + "," + "," + "," + ",");
-                writ1.Write(r.lab1 + "," + "," + "," + "," + "," + "," + "," + ",");
-                writ2.Write(r.lab1 + "," + "," + "," + "," + "," + "," + "," + ",");
-
+               
                 writ.Write(r.lab2);
-                writ1.Write(r.lab2);
-                writ2.Write(r.lab2);
-
+               
                 writ.WriteLine(",");
-                writ1.WriteLine(",");
-                writ2.WriteLine(",");
-
+               
                 writ.Write("," + ",");
-                writ1.Write("," + ",");
-                writ2.Write("," + ",");
                 for (int i = 0; i <= 4; i++)
                 {
                     writ.Write("THEORY,");
@@ -162,22 +123,7 @@ namespace KnowYourResult
                     writ.Write("GP,");
                     writ.Write("C*GP,");
 
-                    writ1.Write("THEORY,");
-                    writ1.Write("INTERNAL,");
-                    writ1.Write("TOTAL,");
-                    writ1.Write("CREDIT,");
-                    writ1.Write("GRADE,");
-                    writ1.Write("GP,");
-                    writ1.Write("C*GP,");
-
-                    writ2.Write("THEORY,");
-                    writ2.Write("INTERNAL,");
-                    writ2.Write("TOTAL,");
-                    writ2.Write("CREDIT,");
-                    writ2.Write("GRADE,");
-                    writ2.Write("GP,");
-                    writ2.Write("C*GP,");
-                }
+               }
                 for (int i = 5; i <= 6; i++)
                 {
                     writ.Write("25\'\'11,");
@@ -189,23 +135,6 @@ namespace KnowYourResult
                     writ.Write("GP,");
                     writ.Write("C*GP,");
 
-                    writ1.Write("25\'\'11,");
-                    writ1.Write("25\'\'11,");
-                    writ1.Write("50\'\'23,");
-                    writ1.Write("Total,");
-                    writ1.Write("CREDIT,");
-                    writ1.Write("GRADE,");
-                    writ1.Write("GP,");
-                    writ1.Write("C*GP,");
-
-                    writ2.Write("25\'\'11,");
-                    writ2.Write("25\'\'11,");
-                    writ2.Write("50\'\'23,");
-                    writ2.Write("Total,");
-                    writ2.Write("CREDIT,");
-                    writ2.Write("GRADE,");
-                    writ2.Write("GP,");
-                    writ2.Write("C*GP,");
                 }
                 writ.Write("G,");
                 writ.Write("GPA,");
@@ -214,20 +143,7 @@ namespace KnowYourResult
                 writ.WriteLine(",");
                 writ.WriteLine(",");
 
-                writ1.Write("G,");
-                writ1.Write("GPA,");
-                writ1.Write("Grade,");
-                writ1.Write("Result,");
-                writ1.WriteLine(",");
-                writ1.WriteLine(",");
-
-                writ2.Write("G,");
-                writ2.Write("GPA,");
-                writ2.Write("Grade,");
-                writ2.Write("Result,");
-                writ2.WriteLine(",");
-                writ2.WriteLine(",");
-
+               
                 //direct result generate file
                 if (FileUpload1.HasFile && FileUpload1.FileName.Contains("MCA") ||
                     FileUpload1.FileName.Contains("M.C.A") && FileUpload1.FileName.Contains("CBSGS") ||
@@ -526,17 +442,14 @@ namespace KnowYourResult
             finally
             {
                 writ.Close();
-                sumwrite.Close();
-                writ1.Close();
-                writ2.Close();
-               // writ.Close();
-                
+                sumwrite.Close();     
             }
         }
         public void GetErrorMsg(string msg)
         {
             Page.ClientScript.RegisterStartupScript(this.GetType(), "alert", "alert('"+msg+"')", true);            
         }
+
         public void generateFinalResult(List<string> detail, Result r,ref StreamWriter writ)
         {
                 //writ.WriteLine(",");
@@ -813,70 +726,75 @@ namespace KnowYourResult
                 writ.Write(res+",");
                 writ.WriteLine(","+",");
         }
-
-        
+                
         public void setMarks(string th,string ia,string total,string credit,string grade)
         {
  
         }
-        /*protected void Button2_Click2(object sender, EventArgs e)
+
+        protected void Button2_Click2(object sender, EventArgs e)
         {
-            r.setSubjects(ListBox1.SelectedItem.Text);
-
-            filecontent = read.ReadLine();
-
-            while (filecontent != null)
+            try
             {
-                texts += filecontent + " ";
+                start = int.Parse(Starting.Text);
+                end = int.Parse(ending.Text);
+                r.setSubjects(ListBox1.SelectedItem.Text);
+
                 filecontent = read.ReadLine();
-            }
-            a = texts.Split(' ');
-            writ1 = file2.CreateText();
-            writ1.Write("," + "," + "," + "," + "," + ",");
-            writ1.WriteLine("First SHIFT RESULT");
-            writ1.Write("SEAT NUMBER" + ",");
-            writ1.Write("NAME OF STUDENT" + ",");
-            writ1.Write(r.subject1 + "," + "," + "," + "," + "," + "," + ",");
-            writ1.Write(r.subject2 + "," + "," + "," + "," + "," + "," + ",");
-            writ1.Write(r.subject3 + "," + "," + "," + "," + "," + "," + ",");
-            writ1.Write(r.subject4 + "," + "," + "," + "," + "," + "," + ",");
-            writ1.Write(r.subject5 + "," + "," + "," + "," + "," + "," + ",");
-            writ1.Write(r.lab1 + "," + "," + "," + "," + "," + "," + "," + ",");
-            writ1.Write(r.lab2);
-            writ1.WriteLine(",");
-            writ1.Write("," + ",");
 
-            for (int i = 0; i <= 4; i++)
-            {
-                writ1.Write("THEORY,");
-                writ1.Write("INTERNAL,");
-                writ1.Write("TOTAL,");
-                writ1.Write("CREDIT,");
-                writ1.Write("GRADE,");
-                writ1.Write("GP,");
-                writ1.Write("C*GP,");
-            }
-            for (int i = 5; i <= 6; i++)
-            {
-                writ1.Write("25\'\'11,");
-                writ1.Write("25\'\'11,");
-                writ1.Write("50\'\'23,");
-                writ1.Write("Total,");
-                writ1.Write("CREDIT,");
-                writ1.Write("GRADE,");
-                writ1.Write("GP,");
-                writ1.Write("C*GP,");
-            } 
-            writ1.Write("G,");
-            writ1.Write("GPA,");
-            writ1.Write("Grade,");
-            writ1.Write("Result,");
-            writ1.WriteLine(",");
-            writ1.WriteLine(",");
-            
-            if (FileUpload1.HasFile && FileUpload1.FileName.Contains("MCA") ||
-                    FileUpload1.FileName.Contains("M.C.A") && FileUpload1.FileName.Contains("CBSGS") ||
-                    FileUpload1.FileName.Contains("CHOICE"))
+                while (filecontent != null)
+                {
+                    texts += filecontent + " ";
+                    filecontent = read.ReadLine();
+                }
+                a = texts.Split(' ');
+                writ1 = file2.CreateText();
+                sumwrite1 = summary1.CreateText();
+                writ1.Write("," + "," + "," + "," + "," + ",");
+                writ1.WriteLine("First SHIFT RESULT");
+                writ1.Write("SEAT NUMBER" + ",");
+                writ1.Write("NAME OF STUDENT" + ",");
+                writ1.Write(r.subject1 + "," + "," + "," + "," + "," + "," + ",");
+                writ1.Write(r.subject2 + "," + "," + "," + "," + "," + "," + ",");
+                writ1.Write(r.subject3 + "," + "," + "," + "," + "," + "," + ",");
+                writ1.Write(r.subject4 + "," + "," + "," + "," + "," + "," + ",");
+                writ1.Write(r.subject5 + "," + "," + "," + "," + "," + "," + ",");
+                writ1.Write(r.lab1 + "," + "," + "," + "," + "," + "," + "," + ",");
+                writ1.Write(r.lab2);
+                writ1.WriteLine(",");
+                writ1.Write("," + ",");
+
+                for (int i = 0; i <= 4; i++)
+                {
+                    writ1.Write("THEORY,");
+                    writ1.Write("INTERNAL,");
+                    writ1.Write("TOTAL,");
+                    writ1.Write("CREDIT,");
+                    writ1.Write("GRADE,");
+                    writ1.Write("GP,");
+                    writ1.Write("C*GP,");
+                }
+                for (int i = 5; i <= 6; i++)
+                {
+                    writ1.Write("25\'\'11,");
+                    writ1.Write("25\'\'11,");
+                    writ1.Write("50\'\'23,");
+                    writ1.Write("Total,");
+                    writ1.Write("CREDIT,");
+                    writ1.Write("GRADE,");
+                    writ1.Write("GP,");
+                    writ1.Write("C*GP,");
+                }
+                writ1.Write("G,");
+                writ1.Write("GPA,");
+                writ1.Write("Grade,");
+                writ1.Write("Result,");
+                writ1.WriteLine(",");
+                writ1.WriteLine(",");
+
+                if (FileUpload1.HasFile && FileUpload1.FileName.Contains("MCA") ||
+                        FileUpload1.FileName.Contains("M.C.A") && FileUpload1.FileName.Contains("CBSGS") ||
+                        FileUpload1.FileName.Contains("CHOICE"))
                 {
                     string fileExtension = System.IO.Path.GetExtension(FileUpload1.FileName);
 
@@ -895,12 +813,12 @@ namespace KnowYourResult
                         else
                         {
                             //r.setSubjects(FileUpload1.FileName);
-                            /*FileUpload1.PostedFile.SaveAs(Server.MapPath("~/Files/") + FileUpload1.FileName);
+                            FileUpload1.PostedFile.SaveAs(Server.MapPath("~/Files/") + FileUpload1.FileName);
                             r.Extract_Text(Server.MapPath("~/Files/" + FileUpload1.FileName));
-                            for(int re=start;  re<=end;   re++)
+                            for (int re = start; re <= end; re++)
                             {
-                                if (r.FilterDetails(Convert.ToString(re))==true)
-                                { 
+                                if (r.FilterDetails(Convert.ToString(re)) == true)
+                                {
                                     //writ.Write("," + r.FilterDetails(Convert.ToString(re))+",");
                                     generateFinalResult(r.GenerateMarksheet(), r, ref writ);
                                 }
@@ -909,34 +827,577 @@ namespace KnowYourResult
                         }
                     }
                 }
-            else if (ListBox1.SelectedIndex != -1 &&
-                ListBox1.SelectedItem.Text.Contains("MCA")
-                || ListBox1.SelectedItem.Text.Contains("M.C.A") && ListBox1.SelectedItem.Text.Contains("CHOICE")
-                || ListBox1.SelectedItem.Text.Contains("CBSGS"))
-            {
-                Page.ClientScript.RegisterStartupScript(this.GetType(), "alert", "alert('done!" + ListBox1.SelectedItem.Text + "')", true);
-
-
-                r.Extract_Text(Server.MapPath("~/Files/" + ListBox1.SelectedItem.Text));
-
-                //new shift 1 & 2 (3/3/20)
-                for (int i = 0; i < a.Length; i++)
+                else if (ListBox1.SelectedIndex != -1 &&
+                    ListBox1.SelectedItem.Text.Contains("MCA")
+                    || ListBox1.SelectedItem.Text.Contains("M.C.A") && ListBox1.SelectedItem.Text.Contains("CHOICE")
+                    || ListBox1.SelectedItem.Text.Contains("CBSGS"))
                 {
-                    for (int re1 = start; re1 <= end; re1++)
+                    Page.ClientScript.RegisterStartupScript(this.GetType(), "alert", "alert('done!" + ListBox1.SelectedItem.Text + "')", true);
+
+
+                    r.Extract_Text(Server.MapPath("~/Files/" + ListBox1.SelectedItem.Text));
+
+                    //new shift 1 & 2 (3/3/20)
+                    for (int i = 0; i < a.Length; i++)
                     {
-                        if (a[i] == Convert.ToString(re1))
+                        for (int re1 = start; re1 <= end; re1++)
                         {
-                            if (r.FilterDetails(Convert.ToString(a[i])) == true)
+                            if (a[i] == Convert.ToString(re1))
                             {
-                                generateFinalResult1(r.GenerateMarksheet(), r,ref writ1);
+                                if (r.FilterDetails(Convert.ToString(a[i])) == true)
+                                {
+                                    generateFinalResult1(r.GenerateMarksheet(), r, ref writ1);
+                                }
                             }
                         }
                     }
                 }
+                int totalstudent = r.TotalStudent;
+                writ1.WriteLine("," + ",");
+                writ1.Write(",Total Students," + totalstudent);
+                writ1.WriteLine(",");
+
+                writ1.Write(",Total Students Appeared," + totalstudent);
+                writ1.WriteLine(",");
+
+
+                decimal sum_sub1 = t_sub1 / r.TotalStudent;
+                decimal sum_sub2 = t_sub2 / r.TotalStudent;
+                decimal sum_sub3 = t_sub3 / r.TotalStudent;
+                decimal sum_sub4 = t_sub4 / r.TotalStudent;
+                decimal sum_sub5 = t_sub5 / r.TotalStudent;
+                decimal sum_sub6 = t_sub6 / r.TotalStudent;
+                decimal sum_sub7 = t_sub7 / r.TotalStudent;
+
+
+
+                writ1.Write(",Average marks," + Math.Round(sum_sub1, 2) + "," + "," + "," + "," + "," + "," + ",");
+                writ1.Write(Math.Round(sum_sub2, 2) + "," + "," + "," + "," + "," + "," + ",");
+                writ1.Write(Math.Round(sum_sub3, 2) + "," + "," + "," + "," + "," + "," + ",");
+                writ1.Write(Math.Round(sum_sub4, 2) + "," + "," + "," + "," + "," + "," + ",");
+                writ1.Write(Math.Round(sum_sub5, 2) + "," + "," + "," + "," + "," + "," + ",");
+                writ1.Write(Math.Round(sum_sub6, 2) + "," + "," + "," + "," + "," + "," + ",");
+                writ1.Write(Math.Round(sum_sub7, 2) + "," + "," + "," + "," + "," + "," + ",");
+                writ1.WriteLine(",");
+
+                writ1.Write(",Passed," + p_sub1 + "," + "," + "," + "," + "," + "," + ",");
+                writ1.Write(p_sub2 + "," + "," + "," + "," + "," + "," + ",");
+                writ1.Write(p_sub3 + "," + "," + "," + "," + "," + "," + ",");
+                writ1.Write(p_sub4 + "," + "," + "," + "," + "," + "," + ",");
+                writ1.Write(p_sub5 + "," + "," + "," + "," + "," + "," + ",");
+                writ1.Write(p_sub6 + "," + "," + "," + "," + "," + "," + ",");
+                writ1.Write(p_sub7 + "," + "," + "," + "," + "," + "," + ",");
+                writ1.WriteLine(",");
+
+                writ1.Write(",Failed," + f_sub1 + "," + "," + "," + "," + "," + "," + ",");
+                writ1.Write(f_sub2 + "," + "," + "," + "," + "," + "," + ",");
+                writ1.Write(f_sub3 + "," + "," + "," + "," + "," + "," + ",");
+                writ1.Write(f_sub4 + "," + "," + "," + "," + "," + "," + ",");
+                writ1.Write(f_sub5 + "," + "," + "," + "," + "," + "," + ",");
+                writ1.Write(f_sub6 + "," + "," + "," + "," + "," + "," + ",");
+                writ1.Write(f_sub7 + "," + "," + "," + "," + "," + "," + ",");
+                writ1.WriteLine(",");
+
+                ps_sub1 = (double)(p_sub1 * 100) / totalstudent;
+                ps_sub2 = (double)(p_sub2 * 100) / totalstudent;
+                ps_sub3 = (double)(p_sub3 * 100) / totalstudent;
+                ps_sub4 = (double)(p_sub4 * 100) / totalstudent;
+                ps_sub5 = (double)(p_sub5 * 100) / totalstudent;
+                ps_sub6 = (double)(p_sub6 * 100) / totalstudent;
+                ps_sub7 = (double)(p_sub7 * 100) / totalstudent;
+
+                writ1.Write(",passing percentage," + Math.Round(ps_sub1, 2) + "," + "," + "," + "," + "," + "," + ",");
+                writ1.Write(Math.Round(ps_sub2, 2) + "," + "," + "," + "," + "," + "," + ",");
+                writ1.Write(Math.Round(ps_sub3, 2) + "," + "," + "," + "," + "," + "," + ",");
+                writ1.Write(Math.Round(ps_sub4, 2) + "," + "," + "," + "," + "," + "," + ",");
+                writ1.Write(Math.Round(ps_sub5, 2) + "," + "," + "," + "," + "," + "," + ",");
+                writ1.Write(Math.Round(ps_sub6, 2) + "," + "," + "," + "," + "," + "," + ",");
+                writ1.Write(Math.Round(ps_sub7, 2) + "," + "," + "," + "," + "," + "," + ",");
+                writ1.WriteLine(",");
+
+
+                writ1.Write(",O grade," + o_sub1 + "," + "," + "," + "," + "," + "," + ",");
+                writ1.Write(o_sub2 + "," + "," + "," + "," + "," + "," + ",");
+                writ1.Write(o_sub3 + "," + "," + "," + "," + "," + "," + ",");
+                writ1.Write(o_sub4 + "," + "," + "," + "," + "," + "," + ",");
+                writ1.Write(o_sub5 + "," + "," + "," + "," + "," + "," + ",");
+                writ1.Write(o_sub6 + "," + "," + "," + "," + "," + "," + ",");
+                writ1.Write(o_sub7 + "," + "," + "," + "," + "," + "," + ",");
+                writ1.WriteLine(",");
+
+                writ1.Write(",A grade," + a_sub1 + "," + "," + "," + "," + "," + "," + ",");
+                writ1.Write(a_sub2 + "," + "," + "," + "," + "," + "," + ",");
+                writ1.Write(a_sub3 + "," + "," + "," + "," + "," + "," + ",");
+                writ1.Write(a_sub4 + "," + "," + "," + "," + "," + "," + ",");
+                writ1.Write(a_sub5 + "," + "," + "," + "," + "," + "," + ",");
+                writ1.Write(a_sub6 + "," + "," + "," + "," + "," + "," + ",");
+                writ1.Write(a_sub7 + "," + "," + "," + "," + "," + "," + ",");
+                writ1.WriteLine(",");
+
+                writ1.Write(",B grade," + b_sub1 + "," + "," + "," + "," + "," + "," + ",");
+                writ1.Write(b_sub2 + "," + "," + "," + "," + "," + "," + ",");
+                writ1.Write(b_sub3 + "," + "," + "," + "," + "," + "," + ",");
+                writ1.Write(b_sub4 + "," + "," + "," + "," + "," + "," + ",");
+                writ1.Write(b_sub5 + "," + "," + "," + "," + "," + "," + ",");
+                writ1.Write(b_sub6 + "," + "," + "," + "," + "," + "," + ",");
+                writ1.Write(b_sub7 + "," + "," + "," + "," + "," + "," + ",");
+                writ1.WriteLine(",");
+
+                writ1.Write(",C grade," + c_sub1 + "," + "," + "," + "," + "," + "," + ",");
+                writ1.Write(c_sub2 + "," + "," + "," + "," + "," + "," + ",");
+                writ1.Write(c_sub3 + "," + "," + "," + "," + "," + "," + ",");
+                writ1.Write(c_sub4 + "," + "," + "," + "," + "," + "," + ",");
+                writ1.Write(c_sub5 + "," + "," + "," + "," + "," + "," + ",");
+                writ1.Write(c_sub6 + "," + "," + "," + "," + "," + "," + ",");
+                writ1.Write(c_sub7 + "," + "," + "," + "," + "," + "," + ",");
+                writ1.WriteLine(",");
+
+                writ1.Write(",D grade," + d_sub1 + "," + "," + "," + "," + "," + "," + ",");
+                writ1.Write(d_sub2 + "," + "," + "," + "," + "," + "," + ",");
+                writ1.Write(d_sub3 + "," + "," + "," + "," + "," + "," + ",");
+                writ1.Write(d_sub4 + "," + "," + "," + "," + "," + "," + ",");
+                writ1.Write(d_sub5 + "," + "," + "," + "," + "," + "," + ",");
+                writ1.Write(d_sub6 + "," + "," + "," + "," + "," + "," + ",");
+                writ1.Write(d_sub7 + "," + "," + "," + "," + "," + "," + ",");
+                writ1.WriteLine(",");
+
+                writ1.Write(",E grade," + e_sub1 + "," + "," + "," + "," + "," + "," + ",");
+                writ1.Write(e_sub2 + "," + "," + "," + "," + "," + "," + ",");
+                writ1.Write(e_sub3 + "," + "," + "," + "," + "," + "," + ",");
+                writ1.Write(e_sub4 + "," + "," + "," + "," + "," + "," + ",");
+                writ1.Write(e_sub5 + "," + "," + "," + "," + "," + "," + ",");
+                writ1.Write(e_sub6 + "," + "," + "," + "," + "," + "," + ",");
+                writ1.Write(e_sub7 + "," + "," + "," + "," + "," + "," + ",");
+                writ1.WriteLine(",");
+
+                writ1.Write(",P grade," + pa_sub1 + "," + "," + "," + "," + "," + "," + ",");
+                writ1.Write(pa_sub2 + "," + "," + "," + "," + "," + "," + ",");
+                writ1.Write(pa_sub3 + "," + "," + "," + "," + "," + "," + ",");
+                writ1.Write(pa_sub4 + "," + "," + "," + "," + "," + "," + ",");
+                writ1.Write(pa_sub5 + "," + "," + "," + "," + "," + "," + ",");
+                writ1.Write(pa_sub6 + "," + "," + "," + "," + "," + "," + ",");
+                writ1.Write(pa_sub7 + "," + "," + "," + "," + "," + "," + ",");
+                writ1.WriteLine(",");
+
+                writ1.Write(",F grade," + fa_sub1 + "," + "," + "," + "," + "," + "," + ",");
+                writ1.Write(fa_sub2 + "," + "," + "," + "," + "," + "," + ",");
+                writ1.Write(fa_sub3 + "," + "," + "," + "," + "," + "," + ",");
+                writ1.Write(fa_sub4 + "," + "," + "," + "," + "," + "," + ",");
+                writ1.Write(fa_sub5 + "," + "," + "," + "," + "," + "," + ",");
+                writ1.Write(fa_sub6 + "," + "," + "," + "," + "," + "," + ",");
+                writ1.Write(fa_sub7 + "," + "," + "," + "," + "," + "," + ",");
+                writ1.WriteLine(",");
+
+                sub1_60 = o_sub1 + a_sub1 + b_sub1 + c_sub1;
+                sub2_60 = o_sub2 + a_sub2 + b_sub2 + c_sub2;
+                sub3_60 = o_sub3 + a_sub3 + b_sub3 + c_sub3;
+                sub4_60 = o_sub4 + a_sub4 + b_sub4 + c_sub4;
+                sub5_60 = o_sub5 + a_sub5 + b_sub5 + c_sub5;
+                sub6_60 = o_sub6 + a_sub6 + b_sub6 + c_sub6;
+                sub7_60 = o_sub7 + a_sub7 + b_sub7 + c_sub7;
+
+                writ1.Write(",Total Student 60% and above," + sub1_60 + "," + "," + "," + "," + "," + "," + ",");
+                writ1.Write(sub2_60 + "," + "," + "," + "," + "," + "," + ",");
+                writ1.Write(sub3_60 + "," + "," + "," + "," + "," + "," + ",");
+                writ1.Write(sub4_60 + "," + "," + "," + "," + "," + "," + ",");
+                writ1.Write(sub5_60 + "," + "," + "," + "," + "," + "," + ",");
+                writ1.Write(sub6_60 + "," + "," + "," + "," + "," + "," + ",");
+                writ1.Write(sub7_60 + "," + "," + "," + "," + "," + "," + ",");
+                writ1.WriteLine(",");
+
+                below1_60 = d_sub1 + e_sub1 + pa_sub1;
+                below2_60 = d_sub2 + e_sub2 + pa_sub2;
+                below3_60 = d_sub3 + e_sub3 + pa_sub3;
+                below4_60 = d_sub4 + e_sub4 + pa_sub4;
+                below5_60 = d_sub5 + e_sub5 + pa_sub5;
+                below6_60 = d_sub6 + e_sub6 + pa_sub6;
+                below7_60 = d_sub7 + e_sub7 + pa_sub7;
+
+                writ1.Write(",Total Student below 60%," + below1_60 + "," + "," + "," + "," + "," + "," + ",");
+                writ1.Write(below2_60 + "," + "," + "," + "," + "," + "," + ",");
+                writ1.Write(below3_60 + "," + "," + "," + "," + "," + "," + ",");
+                writ1.Write(below4_60 + "," + "," + "," + "," + "," + "," + ",");
+                writ1.Write(below5_60 + "," + "," + "," + "," + "," + "," + ",");
+                writ1.Write(below6_60 + "," + "," + "," + "," + "," + "," + ",");
+                writ1.Write(below7_60 + "," + "," + "," + "," + "," + "," + ",");
+                writ1.WriteLine(",");
+
+                writ1.Write("Total Marks," + t_sub1 + "," + t_sub2 + "," + t_sub3 + "," + t_sub4 + "," + t_sub5 + "," + t_sub6 + "," + t_sub7);
+
+                sumwrite1.WriteLine("Subject," + r.subject1 + "," + r.subject2 + "," + r.subject3 + "," + r.subject4 + "," + r.subject5 + ","
+                       + r.lab1 + "," + r.lab2);
+                sumwrite1.WriteLine(",");
+                sumwrite1.WriteLine("Total Student," + r.TotalStudent + "," + r.TotalStudent + "," + r.TotalStudent + "," + r.TotalStudent + "," + r.TotalStudent + "," + r.TotalStudent + "," + r.TotalStudent + ",");
+                sumwrite1.WriteLine("Average Marks," + Math.Round(sum_sub1, 2) + "," + Math.Round(sum_sub2, 2) + "," + Math.Round(sum_sub3, 2) + "," + Math.Round(sum_sub4, 2) + "," + Math.Round(sum_sub5, 2) + "," + Math.Round(sum_sub6, 2) + "," + Math.Round(sum_sub7, 2) + ",");
+                sumwrite1.WriteLine("Passed," + p_sub1 + "," + p_sub2 + "," + p_sub3 + "," + p_sub4 + "," + p_sub5 + "," + p_sub6 + "," + p_sub7 + ",");
+                sumwrite1.WriteLine("Failed," + f_sub1 + "," + f_sub2 + "," + f_sub3 + "," + f_sub4 + "," + f_sub5 + "," + f_sub6 + "," + f_sub7 + ",");
+                sumwrite1.WriteLine("O grade," + o_sub1 + "," + o_sub2 + "," + o_sub3 + "," + o_sub4 + "," + o_sub5 + "," + o_sub6 + "," + o_sub7 + ",");
+                sumwrite1.WriteLine("A grade," + a_sub1 + "," + a_sub2 + "," + a_sub3 + "," + a_sub4 + "," + a_sub5 + "," + a_sub6 + "," + a_sub7 + ",");
+                sumwrite1.WriteLine("B grade," + b_sub1 + "," + b_sub2 + "," + b_sub3 + "," + b_sub4 + "," + b_sub5 + "," + b_sub6 + "," + b_sub7 + ",");
+                sumwrite1.WriteLine("C grade," + c_sub1 + "," + c_sub2 + "," + c_sub3 + "," + c_sub4 + "," + c_sub5 + "," + c_sub6 + "," + c_sub7 + ",");
+                sumwrite1.WriteLine("D grade," + d_sub1 + "," + d_sub2 + "," + d_sub3 + "," + d_sub4 + "," + d_sub5 + "," + d_sub6 + "," + d_sub7 + ",");
+                sumwrite1.WriteLine("E garde," + e_sub1 + "," + e_sub2 + "," + e_sub3 + "," + e_sub4 + "," + e_sub5 + "," + e_sub6 + "," + e_sub7 + ",");
+                sumwrite1.WriteLine("Passed," + pa_sub1 + "," + pa_sub2 + "," + pa_sub3 + "," + pa_sub4 + "," + pa_sub5 + "," + pa_sub6 + "," + pa_sub7 + ",");
+                sumwrite1.WriteLine("Failed," + fa_sub1 + "," + fa_sub2 + "," + fa_sub3 + "," + fa_sub4 + "," + fa_sub5 + "," + fa_sub6 + "," + fa_sub7 + ",");
+                sumwrite1.WriteLine("Total Student with 60% and above ," + sub1_60 + "," + sub2_60 + "," + sub3_60 + "," + sub4_60 + "," + sub5_60 + "," + sub6_60 + "," + sub7_60 + ",");
+                sumwrite1.WriteLine("Total Student with 60% and below," + below1_60 + "," + below2_60 + "," + below3_60 + "," + below4_60 + "," + below5_60 + "," + below6_60 + "," + below7_60 + ",");
+
+                sumwrite1.WriteLine("," + "," + ",");
+                sumwrite1.WriteLine("OVERALL SUMMARY OF SEMESTER," + ",");
+                sumwrite1.WriteLine("Total Student," + "," + r.TotalStudent + ",");
+                sumwrite1.WriteLine("Passed," + totalpass + ",");
+                sumwrite1.WriteLine("Failed," + totalf + ",");
+
+                double totalpassing = (double)(totalpass * 100) / totalstudent;
+                double totalfail = (double)(totalf * 100) / totalstudent;
+                sumwrite1.WriteLine("Passing %," + Math.Round(totalpassing, 2) + ",");
+                sumwrite1.WriteLine("Failed %," + Math.Round(totalfail, 2) + ",");
             }
-            writ1.Close();     
+            catch (Exception es)
+            {
+                GetErrorMsg("Something went wrong");
+            }
+            finally
+            {
+                writ1.Close();
+                sumwrite1.Close();
+            }
               
-        }*/
+        }
+
+        protected void Button3_Click3(object sender, EventArgs e)
+        {
+            try
+            {
+                start = int.Parse(Starting.Text);
+                end = int.Parse(ending.Text);
+                r.setSubjects(ListBox1.SelectedItem.Text);
+
+                filecontent1 = read1.ReadLine();
+
+                while (filecontent1 != null)
+                {
+                    texts1 += filecontent1 + " ";
+                    filecontent1 = read1.ReadLine();
+                }
+                b = texts1.Split(' ');
+                writ2 = file3.CreateText();
+                sumwrite2 = summary2.CreateText();
+                writ2.Write("," + "," + "," + "," + "," + ",");
+                writ2.WriteLine("First SHIFT RESULT");
+                writ2.Write("SEAT NUMBER" + ",");
+                writ2.Write("NAME OF STUDENT" + ",");
+                writ2.Write(r.subject1 + "," + "," + "," + "," + "," + "," + ",");
+                writ2.Write(r.subject2 + "," + "," + "," + "," + "," + "," + ",");
+                writ2.Write(r.subject3 + "," + "," + "," + "," + "," + "," + ",");
+                writ2.Write(r.subject4 + "," + "," + "," + "," + "," + "," + ",");
+                writ2.Write(r.subject5 + "," + "," + "," + "," + "," + "," + ",");
+                writ2.Write(r.lab1 + "," + "," + "," + "," + "," + "," + "," + ",");
+                writ2.Write(r.lab2);
+                writ2.WriteLine(",");
+                writ2.Write("," + ",");
+
+                for (int i = 0; i <= 4; i++)
+                {
+                    writ2.Write("THEORY,");
+                    writ2.Write("INTERNAL,");
+                    writ2.Write("TOTAL,");
+                    writ2.Write("CREDIT,");
+                    writ2.Write("GRADE,");
+                    writ2.Write("GP,");
+                    writ2.Write("C*GP,");
+                }
+                for (int i = 5; i <= 6; i++)
+                {
+                    writ2.Write("25\'\'11,");
+                    writ2.Write("25\'\'11,");
+                    writ2.Write("50\'\'23,");
+                    writ2.Write("Total,");
+                    writ2.Write("CREDIT,");
+                    writ2.Write("GRADE,");
+                    writ2.Write("GP,");
+                    writ2.Write("C*GP,");
+                }
+                writ2.Write("G,");
+                writ2.Write("GPA,");
+                writ2.Write("Grade,");
+                writ2.Write("Result,");
+                writ2.WriteLine(",");
+                writ2.WriteLine(",");
+
+                if (FileUpload1.HasFile && FileUpload1.FileName.Contains("MCA") ||
+                        FileUpload1.FileName.Contains("M.C.A") && FileUpload1.FileName.Contains("CBSGS") ||
+                        FileUpload1.FileName.Contains("CHOICE"))
+                {
+                    string fileExtension = System.IO.Path.GetExtension(FileUpload1.FileName);
+
+                    if (fileExtension.ToLower() != ".pdf")
+                    {
+                        Page.ClientScript.RegisterStartupScript(this.GetType(), "alert", "alert('Only PDF files')", true);
+                    }
+                    else
+                    {
+                        int fileSize = FileUpload1.PostedFile.ContentLength;
+                        if (fileSize > 2100000) //2 mb
+                        {
+                            //208911
+                            Page.ClientScript.RegisterStartupScript(this.GetType(), "alert", "alert('Kindly check the size')", true);
+                        }
+                        else
+                        {
+                            //r.setSubjects(FileUpload1.FileName);
+                            FileUpload1.PostedFile.SaveAs(Server.MapPath("~/Files/") + FileUpload1.FileName);
+                            r.Extract_Text(Server.MapPath("~/Files/" + FileUpload1.FileName));
+                            for (int re = start; re <= end; re++)
+                            {
+                                if (r.FilterDetails(Convert.ToString(re)) == true)
+                                {
+                                    //writ.Write("," + r.FilterDetails(Convert.ToString(re))+",");
+                                    generateFinalResult(r.GenerateMarksheet(), r, ref writ);
+                                }
+                            }
+
+                        }
+                    }
+                }
+                else if (ListBox1.SelectedIndex != -1 &&
+                    ListBox1.SelectedItem.Text.Contains("MCA")
+                    || ListBox1.SelectedItem.Text.Contains("M.C.A") && ListBox1.SelectedItem.Text.Contains("CHOICE")
+                    || ListBox1.SelectedItem.Text.Contains("CBSGS"))
+                {
+                    Page.ClientScript.RegisterStartupScript(this.GetType(), "alert", "alert('done!" + ListBox1.SelectedItem.Text + "')", true);
+
+
+                    r.Extract_Text(Server.MapPath("~/Files/" + ListBox1.SelectedItem.Text));
+
+                    //new shift 1 & 2 (3/3/20)
+                    for (int i = 0; i < b.Length; i++)
+                    {
+                        for (int re1 = start; re1 <= end; re1++)
+                        {
+                            if (b[i] == Convert.ToString(re1))
+                            {
+                                if (r.FilterDetails(Convert.ToString(b[i])) == true)
+                                {
+                                    generateFinalResult1(r.GenerateMarksheet(), r, ref writ2);
+                                }
+                            }
+                        }
+                    }
+                }
+                int totalstudent = r.TotalStudent;
+                writ2.WriteLine("," + ",");
+                writ2.Write(",Total Students," + totalstudent);
+                writ2.WriteLine(",");
+
+                writ2.Write(",Total Students Appeared," + totalstudent);
+                writ2.WriteLine(",");
+
+
+                decimal sum_sub1 = t_sub1 / r.TotalStudent;
+                decimal sum_sub2 = t_sub2 / r.TotalStudent;
+                decimal sum_sub3 = t_sub3 / r.TotalStudent;
+                decimal sum_sub4 = t_sub4 / r.TotalStudent;
+                decimal sum_sub5 = t_sub5 / r.TotalStudent;
+                decimal sum_sub6 = t_sub6 / r.TotalStudent;
+                decimal sum_sub7 = t_sub7 / r.TotalStudent;
+
+
+
+                writ2.Write(",Average marks," + Math.Round(sum_sub1, 2) + "," + "," + "," + "," + "," + "," + ",");
+                writ2.Write(Math.Round(sum_sub2, 2) + "," + "," + "," + "," + "," + "," + ",");
+                writ2.Write(Math.Round(sum_sub3, 2) + "," + "," + "," + "," + "," + "," + ",");
+                writ2.Write(Math.Round(sum_sub4, 2) + "," + "," + "," + "," + "," + "," + ",");
+                writ2.Write(Math.Round(sum_sub5, 2) + "," + "," + "," + "," + "," + "," + ",");
+                writ2.Write(Math.Round(sum_sub6, 2) + "," + "," + "," + "," + "," + "," + ",");
+                writ2.Write(Math.Round(sum_sub7, 2) + "," + "," + "," + "," + "," + "," + ",");
+                writ2.WriteLine(",");
+
+                writ2.Write(",Passed," + p_sub1 + "," + "," + "," + "," + "," + "," + ",");
+                writ2.Write(p_sub2 + "," + "," + "," + "," + "," + "," + ",");
+                writ2.Write(p_sub3 + "," + "," + "," + "," + "," + "," + ",");
+                writ2.Write(p_sub4 + "," + "," + "," + "," + "," + "," + ",");
+                writ2.Write(p_sub5 + "," + "," + "," + "," + "," + "," + ",");
+                writ2.Write(p_sub6 + "," + "," + "," + "," + "," + "," + ",");
+                writ2.Write(p_sub7 + "," + "," + "," + "," + "," + "," + ",");
+                writ2.WriteLine(",");
+
+                writ2.Write(",Failed," + f_sub1 + "," + "," + "," + "," + "," + "," + ",");
+                writ2.Write(f_sub2 + "," + "," + "," + "," + "," + "," + ",");
+                writ2.Write(f_sub3 + "," + "," + "," + "," + "," + "," + ",");
+                writ2.Write(f_sub4 + "," + "," + "," + "," + "," + "," + ",");
+                writ2.Write(f_sub5 + "," + "," + "," + "," + "," + "," + ",");
+                writ2.Write(f_sub6 + "," + "," + "," + "," + "," + "," + ",");
+                writ2.Write(f_sub7 + "," + "," + "," + "," + "," + "," + ",");
+                writ2.WriteLine(",");
+
+                ps_sub1 = (double)(p_sub1 * 100) / totalstudent;
+                ps_sub2 = (double)(p_sub2 * 100) / totalstudent;
+                ps_sub3 = (double)(p_sub3 * 100) / totalstudent;
+                ps_sub4 = (double)(p_sub4 * 100) / totalstudent;
+                ps_sub5 = (double)(p_sub5 * 100) / totalstudent;
+                ps_sub6 = (double)(p_sub6 * 100) / totalstudent;
+                ps_sub7 = (double)(p_sub7 * 100) / totalstudent;
+
+                writ2.Write(",passing percentage," + Math.Round(ps_sub1, 2) + "," + "," + "," + "," + "," + "," + ",");
+                writ2.Write(Math.Round(ps_sub2, 2) + "," + "," + "," + "," + "," + "," + ",");
+                writ2.Write(Math.Round(ps_sub3, 2) + "," + "," + "," + "," + "," + "," + ",");
+                writ2.Write(Math.Round(ps_sub4, 2) + "," + "," + "," + "," + "," + "," + ",");
+                writ2.Write(Math.Round(ps_sub5, 2) + "," + "," + "," + "," + "," + "," + ",");
+                writ2.Write(Math.Round(ps_sub6, 2) + "," + "," + "," + "," + "," + "," + ",");
+                writ2.Write(Math.Round(ps_sub7, 2) + "," + "," + "," + "," + "," + "," + ",");
+                writ2.WriteLine(",");
+
+
+                writ2.Write(",O grade," + o_sub1 + "," + "," + "," + "," + "," + "," + ",");
+                writ2.Write(o_sub2 + "," + "," + "," + "," + "," + "," + ",");
+                writ2.Write(o_sub3 + "," + "," + "," + "," + "," + "," + ",");
+                writ2.Write(o_sub4 + "," + "," + "," + "," + "," + "," + ",");
+                writ2.Write(o_sub5 + "," + "," + "," + "," + "," + "," + ",");
+                writ2.Write(o_sub6 + "," + "," + "," + "," + "," + "," + ",");
+                writ2.Write(o_sub7 + "," + "," + "," + "," + "," + "," + ",");
+                writ2.WriteLine(",");
+
+                writ2.Write(",A grade," + a_sub1 + "," + "," + "," + "," + "," + "," + ",");
+                writ2.Write(a_sub2 + "," + "," + "," + "," + "," + "," + ",");
+                writ2.Write(a_sub3 + "," + "," + "," + "," + "," + "," + ",");
+                writ2.Write(a_sub4 + "," + "," + "," + "," + "," + "," + ",");
+                writ2.Write(a_sub5 + "," + "," + "," + "," + "," + "," + ",");
+                writ2.Write(a_sub6 + "," + "," + "," + "," + "," + "," + ",");
+                writ2.Write(a_sub7 + "," + "," + "," + "," + "," + "," + ",");
+                writ2.WriteLine(",");
+
+                writ2.Write(",B grade," + b_sub1 + "," + "," + "," + "," + "," + "," + ",");
+                writ2.Write(b_sub2 + "," + "," + "," + "," + "," + "," + ",");
+                writ2.Write(b_sub3 + "," + "," + "," + "," + "," + "," + ",");
+                writ2.Write(b_sub4 + "," + "," + "," + "," + "," + "," + ",");
+                writ2.Write(b_sub5 + "," + "," + "," + "," + "," + "," + ",");
+                writ2.Write(b_sub6 + "," + "," + "," + "," + "," + "," + ",");
+                writ2.Write(b_sub7 + "," + "," + "," + "," + "," + "," + ",");
+                writ2.WriteLine(",");
+
+                writ2.Write(",C grade," + c_sub1 + "," + "," + "," + "," + "," + "," + ",");
+                writ2.Write(c_sub2 + "," + "," + "," + "," + "," + "," + ",");
+                writ2.Write(c_sub3 + "," + "," + "," + "," + "," + "," + ",");
+                writ2.Write(c_sub4 + "," + "," + "," + "," + "," + "," + ",");
+                writ2.Write(c_sub5 + "," + "," + "," + "," + "," + "," + ",");
+                writ2.Write(c_sub6 + "," + "," + "," + "," + "," + "," + ",");
+                writ2.Write(c_sub7 + "," + "," + "," + "," + "," + "," + ",");
+                writ2.WriteLine(",");
+
+                writ2.Write(",D grade," + d_sub1 + "," + "," + "," + "," + "," + "," + ",");
+                writ2.Write(d_sub2 + "," + "," + "," + "," + "," + "," + ",");
+                writ2.Write(d_sub3 + "," + "," + "," + "," + "," + "," + ",");
+                writ2.Write(d_sub4 + "," + "," + "," + "," + "," + "," + ",");
+                writ2.Write(d_sub5 + "," + "," + "," + "," + "," + "," + ",");
+                writ2.Write(d_sub6 + "," + "," + "," + "," + "," + "," + ",");
+                writ2.Write(d_sub7 + "," + "," + "," + "," + "," + "," + ",");
+                writ2.WriteLine(",");
+
+                writ2.Write(",E grade," + e_sub1 + "," + "," + "," + "," + "," + "," + ",");
+                writ2.Write(e_sub2 + "," + "," + "," + "," + "," + "," + ",");
+                writ2.Write(e_sub3 + "," + "," + "," + "," + "," + "," + ",");
+                writ2.Write(e_sub4 + "," + "," + "," + "," + "," + "," + ",");
+                writ2.Write(e_sub5 + "," + "," + "," + "," + "," + "," + ",");
+                writ2.Write(e_sub6 + "," + "," + "," + "," + "," + "," + ",");
+                writ2.Write(e_sub7 + "," + "," + "," + "," + "," + "," + ",");
+                writ2.WriteLine(",");
+
+                writ2.Write(",P grade," + pa_sub1 + "," + "," + "," + "," + "," + "," + ",");
+                writ2.Write(pa_sub2 + "," + "," + "," + "," + "," + "," + ",");
+                writ2.Write(pa_sub3 + "," + "," + "," + "," + "," + "," + ",");
+                writ2.Write(pa_sub4 + "," + "," + "," + "," + "," + "," + ",");
+                writ2.Write(pa_sub5 + "," + "," + "," + "," + "," + "," + ",");
+                writ2.Write(pa_sub6 + "," + "," + "," + "," + "," + "," + ",");
+                writ2.Write(pa_sub7 + "," + "," + "," + "," + "," + "," + ",");
+                writ2.WriteLine(",");
+
+                writ2.Write(",F grade," + fa_sub1 + "," + "," + "," + "," + "," + "," + ",");
+                writ2.Write(fa_sub2 + "," + "," + "," + "," + "," + "," + ",");
+                writ2.Write(fa_sub3 + "," + "," + "," + "," + "," + "," + ",");
+                writ2.Write(fa_sub4 + "," + "," + "," + "," + "," + "," + ",");
+                writ2.Write(fa_sub5 + "," + "," + "," + "," + "," + "," + ",");
+                writ2.Write(fa_sub6 + "," + "," + "," + "," + "," + "," + ",");
+                writ2.Write(fa_sub7 + "," + "," + "," + "," + "," + "," + ",");
+                writ2.WriteLine(",");
+
+                sub1_60 = o_sub1 + a_sub1 + b_sub1 + c_sub1;
+                sub2_60 = o_sub2 + a_sub2 + b_sub2 + c_sub2;
+                sub3_60 = o_sub3 + a_sub3 + b_sub3 + c_sub3;
+                sub4_60 = o_sub4 + a_sub4 + b_sub4 + c_sub4;
+                sub5_60 = o_sub5 + a_sub5 + b_sub5 + c_sub5;
+                sub6_60 = o_sub6 + a_sub6 + b_sub6 + c_sub6;
+                sub7_60 = o_sub7 + a_sub7 + b_sub7 + c_sub7;
+
+                writ2.Write(",Total Student 60% and above," + sub1_60 + "," + "," + "," + "," + "," + "," + ",");
+                writ2.Write(sub2_60 + "," + "," + "," + "," + "," + "," + ",");
+                writ2.Write(sub3_60 + "," + "," + "," + "," + "," + "," + ",");
+                writ2.Write(sub4_60 + "," + "," + "," + "," + "," + "," + ",");
+                writ2.Write(sub5_60 + "," + "," + "," + "," + "," + "," + ",");
+                writ2.Write(sub6_60 + "," + "," + "," + "," + "," + "," + ",");
+                writ2.Write(sub7_60 + "," + "," + "," + "," + "," + "," + ",");
+                writ2.WriteLine(",");
+
+                below1_60 = d_sub1 + e_sub1 + pa_sub1;
+                below2_60 = d_sub2 + e_sub2 + pa_sub2;
+                below3_60 = d_sub3 + e_sub3 + pa_sub3;
+                below4_60 = d_sub4 + e_sub4 + pa_sub4;
+                below5_60 = d_sub5 + e_sub5 + pa_sub5;
+                below6_60 = d_sub6 + e_sub6 + pa_sub6;
+                below7_60 = d_sub7 + e_sub7 + pa_sub7;
+
+                writ2.Write(",Total Student below 60%," + below1_60 + "," + "," + "," + "," + "," + "," + ",");
+                writ2.Write(below2_60 + "," + "," + "," + "," + "," + "," + ",");
+                writ2.Write(below3_60 + "," + "," + "," + "," + "," + "," + ",");
+                writ2.Write(below4_60 + "," + "," + "," + "," + "," + "," + ",");
+                writ2.Write(below5_60 + "," + "," + "," + "," + "," + "," + ",");
+                writ2.Write(below6_60 + "," + "," + "," + "," + "," + "," + ",");
+                writ2.Write(below7_60 + "," + "," + "," + "," + "," + "," + ",");
+                writ2.WriteLine(",");
+
+                writ2.Write("Total Marks," + t_sub1 + "," + t_sub2 + "," + t_sub3 + "," + t_sub4 + "," + t_sub5 + "," + t_sub6 + "," + t_sub7);
+
+                sumwrite2.WriteLine("Subject," + r.subject1 + "," + r.subject2 + "," + r.subject3 + "," + r.subject4 + "," + r.subject5 + ","
+                       + r.lab1 + "," + r.lab2);
+                sumwrite2.WriteLine(",");
+                sumwrite2.WriteLine("Total Student," + r.TotalStudent + "," + r.TotalStudent + "," + r.TotalStudent + "," + r.TotalStudent + "," + r.TotalStudent + "," + r.TotalStudent + "," + r.TotalStudent + ",");
+                sumwrite2.WriteLine("Average Marks," + Math.Round(sum_sub1, 2) + "," + Math.Round(sum_sub2, 2) + "," + Math.Round(sum_sub3, 2) + "," + Math.Round(sum_sub4, 2) + "," + Math.Round(sum_sub5, 2) + "," + Math.Round(sum_sub6, 2) + "," + Math.Round(sum_sub7, 2) + ",");
+                sumwrite2.WriteLine("Passed," + p_sub1 + "," + p_sub2 + "," + p_sub3 + "," + p_sub4 + "," + p_sub5 + "," + p_sub6 + "," + p_sub7 + ",");
+                sumwrite2.WriteLine("Failed," + f_sub1 + "," + f_sub2 + "," + f_sub3 + "," + f_sub4 + "," + f_sub5 + "," + f_sub6 + "," + f_sub7 + ",");
+                sumwrite2.WriteLine("O grade," + o_sub1 + "," + o_sub2 + "," + o_sub3 + "," + o_sub4 + "," + o_sub5 + "," + o_sub6 + "," + o_sub7 + ",");
+                sumwrite2.WriteLine("A grade," + a_sub1 + "," + a_sub2 + "," + a_sub3 + "," + a_sub4 + "," + a_sub5 + "," + a_sub6 + "," + a_sub7 + ",");
+                sumwrite2.WriteLine("B grade," + b_sub1 + "," + b_sub2 + "," + b_sub3 + "," + b_sub4 + "," + b_sub5 + "," + b_sub6 + "," + b_sub7 + ",");
+                sumwrite2.WriteLine("C grade," + c_sub1 + "," + c_sub2 + "," + c_sub3 + "," + c_sub4 + "," + c_sub5 + "," + c_sub6 + "," + c_sub7 + ",");
+                sumwrite2.WriteLine("D grade," + d_sub1 + "," + d_sub2 + "," + d_sub3 + "," + d_sub4 + "," + d_sub5 + "," + d_sub6 + "," + d_sub7 + ",");
+                sumwrite2.WriteLine("E garde," + e_sub1 + "," + e_sub2 + "," + e_sub3 + "," + e_sub4 + "," + e_sub5 + "," + e_sub6 + "," + e_sub7 + ",");
+                sumwrite2.WriteLine("Passed," + pa_sub1 + "," + pa_sub2 + "," + pa_sub3 + "," + pa_sub4 + "," + pa_sub5 + "," + pa_sub6 + "," + pa_sub7 + ",");
+                sumwrite2.WriteLine("Failed," + fa_sub1 + "," + fa_sub2 + "," + fa_sub3 + "," + fa_sub4 + "," + fa_sub5 + "," + fa_sub6 + "," + fa_sub7 + ",");
+                sumwrite2.WriteLine("Total Student with 60% and above ," + sub1_60 + "," + sub2_60 + "," + sub3_60 + "," + sub4_60 + "," + sub5_60 + "," + sub6_60 + "," + sub7_60 + ",");
+                sumwrite2.WriteLine("Total Student with 60% and below," + below1_60 + "," + below2_60 + "," + below3_60 + "," + below4_60 + "," + below5_60 + "," + below6_60 + "," + below7_60 + ",");
+
+                sumwrite2.WriteLine("," + "," + ",");
+                sumwrite2.WriteLine("OVERALL SUMMARY OF SEMESTER," + ",");
+                sumwrite2.WriteLine("Total Student," + "," + r.TotalStudent + ",");
+                sumwrite2.WriteLine("Passed," + totalpass + ",");
+                sumwrite2.WriteLine("Failed," + totalf + ",");
+
+                double totalpassing = (double)(totalpass * 100) / totalstudent;
+                double totalfail = (double)(totalf * 100) / totalstudent;
+                sumwrite2.WriteLine("Passing %," + Math.Round(totalpassing, 2) + ",");
+                sumwrite2.WriteLine("Failed %," + Math.Round(totalfail, 2) + ",");
+            }
+            catch (Exception es)
+            {
+                GetErrorMsg("Something went wrong");
+            }
+            finally
+            {
+                writ2.Close();
+                sumwrite2.Close();
+            }
+
+        }
+
         public void generateFinalResult1(List<string> detail, Result r, ref StreamWriter writ1)
         {
             //writ.WriteLine(",");
@@ -946,23 +1407,275 @@ namespace KnowYourResult
             int counts = 1;
             for (int i = r.Getpos(); i < detail.Count; i++)
             {
-                if (counts == 47 && detail[i].Equals("E"))
+                if (counts == 47 && detail[i] == "E")
                 { i++; }
                 if (counts == 49 && detail[i] == "F")
                 { i++; }
                 writ1.Write(detail[i] + ",");
                 counts++;
+                if (!detail[i].Equals("--") || !detail[i].Equals("----"))
+                {
+                    if (counts == 4)
+                    {
+                        t_sub1 = t_sub1 + int.Parse(detail[i]);
+                        if (int.Parse(detail[i]) >= 36)
+                        {
+                            p_sub1++;
+                        }
+                        else
+                        {
+                            f_sub1++;
+                        }
+                    }
+                    if (counts == 11)
+                    {
+                        t_sub2 = t_sub2 + int.Parse(detail[i]);
+                        if (int.Parse(detail[i]) >= 36)
+                        {
+                            p_sub2++;
+                        }
+                        else
+                        {
+                            f_sub2++;
+                        }
+                    }
+                    if (counts == 18)
+                    {
+                        t_sub3 = t_sub3 + int.Parse(detail[i]);
+                        if (int.Parse(detail[i]) >= 36)
+                        {
+                            p_sub3++;
+                        }
+                        else
+                        {
+                            f_sub3++;
+                        }
+                    }
+                    if (counts == 25)
+                    {
+                        t_sub4 = t_sub4 + int.Parse(detail[i]);
+                        if (int.Parse(detail[i]) >= 36)
+                        {
+                            p_sub4++;
+                        }
+                        else
+                        {
+                            f_sub4++;
+                        }
+                    }
+                    if (counts == 32)
+                    {
+                        t_sub5 = t_sub5 + int.Parse(detail[i]);
+                        if (int.Parse(detail[i]) >= 36)
+                        {
+                            p_sub5++;
+                        }
+                        else
+                        {
+                            f_sub5++;
+                        }
+                    }
+                    if (counts == 40)
+                    {
+                        t_sub6 = t_sub6 + int.Parse(detail[i]);
+                        if (int.Parse(detail[i]) >= 36)
+                        {
+                            p_sub6++;
+                        }
+                        else
+                        {
+                            f_sub6++;
+                        }
+                    }
+                    if (counts == 48)
+                    {
+                        if ((detail[counts].Equals("F")))
+                        {
+                            t_sub7 = t_sub7 + int.Parse(detail[i]);
+                            if (int.Parse(detail[i]) >= 36)
+                            {
+                                p_sub7++;
+                            }
+                            else
+                            {
+                                f_sub7++;
+                            }
+                        }
+
+                    }
+                }
                 if (counts == 29)//use regexpattern to match only one element either p or f to file marks or grade
                 {
                     i++;
                     res = detail[i];
+                    if (res == "P" || res == "p")
+                        totalpass++;
+                    else if (res == "F" || res == "f")
+                        totalf++;
                 }
+
+
+                /*grade calculation*/
+                if (counts == 6 && detail[i] == "O" || detail[i] == "o")
+                {
+                    o_sub1++;
+                }
+                else if (counts == 6 && detail[i] == "A" || detail[i] == "a")
+                    a_sub1++;
+                else if (counts == 6 && detail[i] == "B" || detail[i] == "a")
+                    b_sub1++;
+                else if (counts == 6 && detail[i] == "C" || detail[i] == "c")
+                    c_sub1++;
+                else if (counts == 6 && detail[i] == "D" || detail[i] == "d")
+                    d_sub1++;
+                else if (counts == 6 && detail[i] == "E" || detail[i] == "e")
+                    e_sub1++;
+                else if (counts == 6 && detail[i] == "P" || detail[i] == "p")
+                    pa_sub1++;
+                else if (counts == 6 && detail[i] == "--")
+                    fa_sub1++;
+
+                else { }
+
+
+                if (counts == 13 && detail[i] == "O" || detail[i] == "o")
+                {
+                    o_sub2++;
+                }
+                else if (counts == 13 && detail[i] == "A" || detail[i] == "a")
+                    a_sub2++;
+                else if (counts == 13 && detail[i] == "B" || detail[i] == "a")
+                    b_sub2++;
+                else if (counts == 13 && detail[i] == "C" || detail[i] == "c")
+                    c_sub2++;
+                else if (counts == 13 && detail[i] == "D" || detail[i] == "d")
+                    d_sub2++;
+                else if (counts == 13 && detail[i] == "E" || detail[i] == "e")
+                    e_sub2++;
+                else if (counts == 13 && detail[i] == "P" || detail[i] == "p")
+                    pa_sub2++;
+                else if (counts == 13 && detail[i] == "--")
+                    fa_sub2++;
+
+                else { }
+
+                if (counts == 20 && detail[i] == "O" || detail[i] == "o")
+                {
+                    o_sub3++;
+                }
+                else if (counts == 20 && detail[i] == "A" || detail[i] == "a")
+                    a_sub3++;
+                else if (counts == 20 && detail[i] == "B" || detail[i] == "a")
+                    b_sub3++;
+                else if (counts == 20 && detail[i] == "C" || detail[i] == "c")
+                    c_sub3++;
+                else if (counts == 20 && detail[i] == "D" || detail[i] == "d")
+                    d_sub3++;
+                else if (counts == 20 && detail[i] == "E" || detail[i] == "e")
+                    e_sub3++;
+                else if (counts == 20 && detail[i] == "P" || detail[i] == "p")
+                    pa_sub3++;
+                else if (counts == 20 && detail[i] == "--")
+                    fa_sub3++;
+                else { }
+
+
+                if (counts == 27 && detail[i] == "O" || detail[i] == "o")
+                {
+                    o_sub4++;
+                }
+                else if (counts == 27 && detail[i] == "A" || detail[i] == "a")
+                    a_sub4++;
+                else if (counts == 27 && detail[i] == "B" || detail[i] == "a")
+                    b_sub4++;
+                else if (counts == 27 && detail[i] == "C" || detail[i] == "c")
+                    c_sub4++;
+                else if (counts == 27 && detail[i] == "D" || detail[i] == "d")
+                    d_sub4++;
+                else if (counts == 27 && detail[i] == "E" || detail[i] == "e")
+                    e_sub4++;
+                else if (counts == 27 && detail[i] == "P" || detail[i] == "p")
+                    pa_sub4++;
+                else if (counts == 27 && detail[i] == "--")
+                    fa_sub4++;
+                else { }
+
+                if (counts == 34 && detail[i] == "O" || detail[i] == "o")
+                {
+                    o_sub5++;
+                }
+                else if (counts == 34 && detail[i] == "A" || detail[i] == "a")
+                    a_sub5++;
+                else if (counts == 34 && detail[i] == "B" || detail[i] == "a")
+                    b_sub5++;
+                else if (counts == 34 && detail[i] == "C" || detail[i] == "c")
+                    c_sub5++;
+                else if (counts == 34 && detail[i] == "D" || detail[i] == "d")
+                    d_sub5++;
+                else if (counts == 34 && detail[i] == "E" || detail[i] == "e")
+                    e_sub5++;
+                else if (counts == 34 && detail[i] == "P" || detail[i] == "p")
+                    pa_sub5++;
+                else if (counts == 34 && detail[i] == "--")
+                    fa_sub5++;
+                else { }
+
+                if (counts == 42 && detail[i] == "O" || detail[i] == "o")
+                {
+                    o_sub6++;
+                }
+                else if (counts == 42 && detail[i] == "A" || detail[i] == "a")
+                    a_sub6++;
+                else if (counts == 42 && detail[i] == "B" || detail[i] == "a")
+                    b_sub6++;
+                else if (counts == 42 && detail[i] == "C" || detail[i] == "c")
+                    c_sub6++;
+                else if (counts == 42 && detail[i] == "D" || detail[i] == "d")
+                    d_sub6++;
+                else if (counts == 42 && detail[i] == "E" || detail[i] == "e")
+                    e_sub6++;
+                else if (counts == 42 && detail[i] == "P" || detail[i] == "p")
+                    pa_sub6++;
+                else if (counts == 42 && detail[i] == "--")
+                    fa_sub6++;
+                else { }
+
+                if (counts == 50 && detail[i] == "O" || detail[i] == "o")
+                {
+                    o_sub7++;
+                }
+                else if (counts == 50 && detail[i] == "A" || detail[i] == "a")
+                    a_sub7++;
+                else if (counts == 50 && detail[i] == "B" || detail[i] == "a")
+                    b_sub7++;
+                else if (counts == 50 && detail[i] == "C" || detail[i] == "c")
+                    c_sub7++;
+                else if (counts == 50 && detail[i] == "D" || detail[i] == "d")
+                    d_sub7++;
+                else if (counts == 50 && detail[i] == "E" || detail[i] == "e")
+                    e_sub7++;
+                else if (counts == 50 && detail[i] == "F" || detail[i] == "F")
+                    e_sub7++;
+                else if (counts == 50 && detail[i] == "P" || detail[i] == "p")
+                    pa_sub7++;
+                else if (counts == 50 && detail[i] == "--")
+                    fa_sub7++;
+                else { }
+
+                /* if (counts == 57 && detail[i] == "P" || detail[i] == "p")
+                 {
+                     totalpass++;
+                 }
+                 else if (counts == 5 && detail[i] == "F" || detail[i] == "f")
+                 {
+                     totalf++;
+                 }*/
             }
             writ1.Write(res + ",");
             writ1.WriteLine("," + ",");
         }
 
-        public void generateFinalResult2(List<string> detail, Result r, StreamWriter writ2)
+        public void generateFinalResult2(List<string> detail, Result r,ref StreamWriter writ2)
         {
             //writ.WriteLine(",");
             writ2.Write(r.SeatNumber + ",");
@@ -971,19 +1684,269 @@ namespace KnowYourResult
             int counts = 1;
             for (int i = r.Getpos(); i < detail.Count; i++)
             {
-                
-                if (counts == 47 && detail[i].Equals("E"))
+                if (counts == 47 && detail[i] == "E")
                 { i++; }
                 if (counts == 49 && detail[i] == "F")
                 { i++; }
                 writ2.Write(detail[i] + ",");
                 counts++;
+                if (!detail[i].Equals("--") || !detail[i].Equals("----"))
+                {
+                    if (counts == 4)
+                    {
+                        t_sub1 = t_sub1 + int.Parse(detail[i]);
+                        if (int.Parse(detail[i]) >= 36)
+                        {
+                            p_sub1++;
+                        }
+                        else
+                        {
+                            f_sub1++;
+                        }
+                    }
+                    if (counts == 11)
+                    {
+                        t_sub2 = t_sub2 + int.Parse(detail[i]);
+                        if (int.Parse(detail[i]) >= 36)
+                        {
+                            p_sub2++;
+                        }
+                        else
+                        {
+                            f_sub2++;
+                        }
+                    }
+                    if (counts == 18)
+                    {
+                        t_sub3 = t_sub3 + int.Parse(detail[i]);
+                        if (int.Parse(detail[i]) >= 36)
+                        {
+                            p_sub3++;
+                        }
+                        else
+                        {
+                            f_sub3++;
+                        }
+                    }
+                    if (counts == 25)
+                    {
+                        t_sub4 = t_sub4 + int.Parse(detail[i]);
+                        if (int.Parse(detail[i]) >= 36)
+                        {
+                            p_sub4++;
+                        }
+                        else
+                        {
+                            f_sub4++;
+                        }
+                    }
+                    if (counts == 32)
+                    {
+                        t_sub5 = t_sub5 + int.Parse(detail[i]);
+                        if (int.Parse(detail[i]) >= 36)
+                        {
+                            p_sub5++;
+                        }
+                        else
+                        {
+                            f_sub5++;
+                        }
+                    }
+                    if (counts == 40)
+                    {
+                        t_sub6 = t_sub6 + int.Parse(detail[i]);
+                        if (int.Parse(detail[i]) >= 36)
+                        {
+                            p_sub6++;
+                        }
+                        else
+                        {
+                            f_sub6++;
+                        }
+                    }
+                    if (counts == 48)
+                    {
+                        if ((detail[counts].Equals("F")))
+                        {
+                            t_sub7 = t_sub7 + int.Parse(detail[i]);
+                            if (int.Parse(detail[i]) >= 36)
+                            {
+                                p_sub7++;
+                            }
+                            else
+                            {
+                                f_sub7++;
+                            }
+                        }
+
+                    }
+                }
                 if (counts == 29)//use regexpattern to match only one element either p or f to file marks or grade
                 {
                     i++;
                     res = detail[i];
+                    if (res == "P" || res == "p")
+                        totalpass++;
+                    else if (res == "F" || res == "f")
+                        totalf++;
                 }
-                
+
+
+                /*grade calculation*/
+                if (counts == 6 && detail[i] == "O" || detail[i] == "o")
+                {
+                    o_sub1++;
+                }
+                else if (counts == 6 && detail[i] == "A" || detail[i] == "a")
+                    a_sub1++;
+                else if (counts == 6 && detail[i] == "B" || detail[i] == "a")
+                    b_sub1++;
+                else if (counts == 6 && detail[i] == "C" || detail[i] == "c")
+                    c_sub1++;
+                else if (counts == 6 && detail[i] == "D" || detail[i] == "d")
+                    d_sub1++;
+                else if (counts == 6 && detail[i] == "E" || detail[i] == "e")
+                    e_sub1++;
+                else if (counts == 6 && detail[i] == "P" || detail[i] == "p")
+                    pa_sub1++;
+                else if (counts == 6 && detail[i] == "--")
+                    fa_sub1++;
+
+                else { }
+
+
+                if (counts == 13 && detail[i] == "O" || detail[i] == "o")
+                {
+                    o_sub2++;
+                }
+                else if (counts == 13 && detail[i] == "A" || detail[i] == "a")
+                    a_sub2++;
+                else if (counts == 13 && detail[i] == "B" || detail[i] == "a")
+                    b_sub2++;
+                else if (counts == 13 && detail[i] == "C" || detail[i] == "c")
+                    c_sub2++;
+                else if (counts == 13 && detail[i] == "D" || detail[i] == "d")
+                    d_sub2++;
+                else if (counts == 13 && detail[i] == "E" || detail[i] == "e")
+                    e_sub2++;
+                else if (counts == 13 && detail[i] == "P" || detail[i] == "p")
+                    pa_sub2++;
+                else if (counts == 13 && detail[i] == "--")
+                    fa_sub2++;
+
+                else { }
+
+                if (counts == 20 && detail[i] == "O" || detail[i] == "o")
+                {
+                    o_sub3++;
+                }
+                else if (counts == 20 && detail[i] == "A" || detail[i] == "a")
+                    a_sub3++;
+                else if (counts == 20 && detail[i] == "B" || detail[i] == "a")
+                    b_sub3++;
+                else if (counts == 20 && detail[i] == "C" || detail[i] == "c")
+                    c_sub3++;
+                else if (counts == 20 && detail[i] == "D" || detail[i] == "d")
+                    d_sub3++;
+                else if (counts == 20 && detail[i] == "E" || detail[i] == "e")
+                    e_sub3++;
+                else if (counts == 20 && detail[i] == "P" || detail[i] == "p")
+                    pa_sub3++;
+                else if (counts == 20 && detail[i] == "--")
+                    fa_sub3++;
+                else { }
+
+
+                if (counts == 27 && detail[i] == "O" || detail[i] == "o")
+                {
+                    o_sub4++;
+                }
+                else if (counts == 27 && detail[i] == "A" || detail[i] == "a")
+                    a_sub4++;
+                else if (counts == 27 && detail[i] == "B" || detail[i] == "a")
+                    b_sub4++;
+                else if (counts == 27 && detail[i] == "C" || detail[i] == "c")
+                    c_sub4++;
+                else if (counts == 27 && detail[i] == "D" || detail[i] == "d")
+                    d_sub4++;
+                else if (counts == 27 && detail[i] == "E" || detail[i] == "e")
+                    e_sub4++;
+                else if (counts == 27 && detail[i] == "P" || detail[i] == "p")
+                    pa_sub4++;
+                else if (counts == 27 && detail[i] == "--")
+                    fa_sub4++;
+                else { }
+
+                if (counts == 34 && detail[i] == "O" || detail[i] == "o")
+                {
+                    o_sub5++;
+                }
+                else if (counts == 34 && detail[i] == "A" || detail[i] == "a")
+                    a_sub5++;
+                else if (counts == 34 && detail[i] == "B" || detail[i] == "a")
+                    b_sub5++;
+                else if (counts == 34 && detail[i] == "C" || detail[i] == "c")
+                    c_sub5++;
+                else if (counts == 34 && detail[i] == "D" || detail[i] == "d")
+                    d_sub5++;
+                else if (counts == 34 && detail[i] == "E" || detail[i] == "e")
+                    e_sub5++;
+                else if (counts == 34 && detail[i] == "P" || detail[i] == "p")
+                    pa_sub5++;
+                else if (counts == 34 && detail[i] == "--")
+                    fa_sub5++;
+                else { }
+
+                if (counts == 42 && detail[i] == "O" || detail[i] == "o")
+                {
+                    o_sub6++;
+                }
+                else if (counts == 42 && detail[i] == "A" || detail[i] == "a")
+                    a_sub6++;
+                else if (counts == 42 && detail[i] == "B" || detail[i] == "a")
+                    b_sub6++;
+                else if (counts == 42 && detail[i] == "C" || detail[i] == "c")
+                    c_sub6++;
+                else if (counts == 42 && detail[i] == "D" || detail[i] == "d")
+                    d_sub6++;
+                else if (counts == 42 && detail[i] == "E" || detail[i] == "e")
+                    e_sub6++;
+                else if (counts == 42 && detail[i] == "P" || detail[i] == "p")
+                    pa_sub6++;
+                else if (counts == 42 && detail[i] == "--")
+                    fa_sub6++;
+                else { }
+
+                if (counts == 50 && detail[i] == "O" || detail[i] == "o")
+                {
+                    o_sub7++;
+                }
+                else if (counts == 50 && detail[i] == "A" || detail[i] == "a")
+                    a_sub7++;
+                else if (counts == 50 && detail[i] == "B" || detail[i] == "a")
+                    b_sub7++;
+                else if (counts == 50 && detail[i] == "C" || detail[i] == "c")
+                    c_sub7++;
+                else if (counts == 50 && detail[i] == "D" || detail[i] == "d")
+                    d_sub7++;
+                else if (counts == 50 && detail[i] == "E" || detail[i] == "e")
+                    e_sub7++;
+                else if (counts == 50 && detail[i] == "F" || detail[i] == "F")
+                    e_sub7++;
+                else if (counts == 50 && detail[i] == "P" || detail[i] == "p")
+                    pa_sub7++;
+                else if (counts == 50 && detail[i] == "--")
+                    fa_sub7++;
+                else { }
+
+                /* if (counts == 57 && detail[i] == "P" || detail[i] == "p")
+                 {
+                     totalpass++;
+                 }
+                 else if (counts == 5 && detail[i] == "F" || detail[i] == "f")
+                 {
+                     totalf++;
+                 }*/
             }
             writ2.Write(res + ",");
             writ2.WriteLine("," + ",");

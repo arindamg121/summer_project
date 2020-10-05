@@ -35,7 +35,12 @@
                 <p>
                     <asp:Button ID="Button1" runat="server"  class="btn btn-primary" Text="Generate Marksheet " OnClick="Button1_Click1" />
                 </p>
-                
+                <p>
+                    <asp:Button ID="Button2" runat="server" CssClass="btn btn-primary" Text="Shift 1" OnClick="Button2_Click2" />
+                </p>
+                <p>
+                    <asp:Button ID="Button3" runat="server" CssClass="btn btn-primary" Text="Shift 2" OnClick="Button3_Click3" />
+                </p>
             </div>
        </div>
   </form>

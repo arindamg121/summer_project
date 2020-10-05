@@ -25,3 +25,9 @@ D:\result analysis\KnowYourResult\KnowYourResult\KnowYourResult\bin\itextsharp.x
 D:\result analysis\KnowYourResult\KnowYourResult\KnowYourResult\obj\Debug\KnowYourResult.csprojResolveAssemblyReference.cache
 D:\result analysis\KnowYourResult\KnowYourResult\KnowYourResult\obj\Debug\KnowYourResult.dll
 D:\result analysis\KnowYourResult\KnowYourResult\KnowYourResult\obj\Debug\KnowYourResult.pdb
+D:\result-analysis\KnowYourResult\bin\KnowYourResult.dll
+D:\result-analysis\KnowYourResult\bin\KnowYourResult.pdb
+D:\result-analysis\KnowYourResult\bin\itextsharp.xml
+D:\result-analysis\KnowYourResult\obj\Debug\KnowYourResult.csprojResolveAssemblyReference.cache
+D:\result-analysis\KnowYourResult\obj\Debug\KnowYourResult.dll
+D:\result-analysis\KnowYourResult\obj\Debug\KnowYourResult.pdb

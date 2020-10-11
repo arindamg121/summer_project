@@ -21,6 +21,10 @@
 <body style="background-image:url('results.jpg');">
   <form id="form1" runat="server">
         <div class="container">
+        <div class="row">
+            <div class="col-md-4 col-md-offset-4">
+                <h1 class="text-center login-title" style="font-family: 'Linotte'; color: #FFFFFF;">GENERATE YOUR RESULT</h1>
+                        <div class="form-group">
 	<div class="con">
             <p style="text-decoration:solid;font-family:'Linotte';"><b>Select a Result pdf from above </b></div><asp:ListBox ID="ListBox1" runat="server" Width="300px"></asp:ListBox> 
             </p>

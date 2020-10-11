@@ -31,3 +31,9 @@ D:\result-analysis\KnowYourResult\bin\itextsharp.xml
 D:\result-analysis\KnowYourResult\obj\Debug\KnowYourResult.csprojResolveAssemblyReference.cache
 D:\result-analysis\KnowYourResult\obj\Debug\KnowYourResult.dll
 D:\result-analysis\KnowYourResult\obj\Debug\KnowYourResult.pdb
+C:\Users\ninad\Desktop\new\KnowYourResult\bin\KnowYourResult.dll
+C:\Users\ninad\Desktop\new\KnowYourResult\bin\KnowYourResult.pdb
+C:\Users\ninad\Desktop\new\KnowYourResult\bin\itextsharp.xml
+C:\Users\ninad\Desktop\new\KnowYourResult\obj\Debug\KnowYourResult.csprojResolveAssemblyReference.cache
+C:\Users\ninad\Desktop\new\KnowYourResult\obj\Debug\KnowYourResult.dll
+C:\Users\ninad\Desktop\new\KnowYourResult\obj\Debug\KnowYourResult.pdb

@@ -18,8 +18,8 @@
           margin-top: 80px;
           max-width: 600px;
           height: 320px;
-          border: 1px solid #ff8e6e;
-          background-color: #ff8e6e;
+          border: 1px solid #e94560;
+          background-color: #e94560;
           margin-left:300px;
         }
         #login .container #login-row #login-column #login-box #login_form {

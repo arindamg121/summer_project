@@ -37,3 +37,16 @@ C:\Users\ninad\Desktop\new\KnowYourResult\bin\itextsharp.xml
 C:\Users\ninad\Desktop\new\KnowYourResult\obj\Debug\KnowYourResult.csprojResolveAssemblyReference.cache
 C:\Users\ninad\Desktop\new\KnowYourResult\obj\Debug\KnowYourResult.dll
 C:\Users\ninad\Desktop\new\KnowYourResult\obj\Debug\KnowYourResult.pdb
+E:\new project\KnowYourResult\bin\KnowYourResult.dll.config
+E:\new project\KnowYourResult\bin\KnowYourResult.dll
+E:\new project\KnowYourResult\bin\KnowYourResult.pdb
+E:\new project\KnowYourResult\bin\itextsharp.xml
+E:\new project\KnowYourResult\obj\Debug\KnowYourResult.csprojResolveAssemblyReference.cache
+E:\new project\KnowYourResult\obj\Debug\KnowYourResult.dll
+E:\new project\KnowYourResult\obj\Debug\KnowYourResult.pdb
+C:\Users\ninad\Desktop\new project\KnowYourResult\bin\KnowYourResult.dll
+C:\Users\ninad\Desktop\new project\KnowYourResult\bin\KnowYourResult.pdb
+C:\Users\ninad\Desktop\new project\KnowYourResult\bin\itextsharp.xml
+C:\Users\ninad\Desktop\new project\KnowYourResult\obj\Debug\KnowYourResult.csprojResolveAssemblyReference.cache
+C:\Users\ninad\Desktop\new project\KnowYourResult\obj\Debug\KnowYourResult.dll
+C:\Users\ninad\Desktop\new project\KnowYourResult\obj\Debug\KnowYourResult.pdb

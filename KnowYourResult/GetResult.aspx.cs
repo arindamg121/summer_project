@@ -15,7 +15,7 @@ namespace KnowYourResult
     {
         FileInfo file1 = new FileInfo(@"E:\summerp\result.csv");
         StreamWriter writ;
-        StreamReader read=new StreamReader(@"E:\summerp\shift1.txt");
+        StreamReader read = new StreamReader(@"E:\summerp\shift1.txt");
         FileInfo file2 = new FileInfo(@"E:\summerp\shift1_1.csv");
         StreamWriter writ1;
 
@@ -25,10 +25,10 @@ namespace KnowYourResult
 
         FileInfo summary = new FileInfo(@"E:\summerp\summary.csv");
         StreamWriter sumwrite;
-        
+
         FileInfo summary1 = new FileInfo(@"E:\summerp\summary_shift1.csv");
         StreamWriter sumwrite1;
-        
+
         FileInfo summary2 = new FileInfo(@"E:\summerp\summary_shift2.csv");
         StreamWriter sumwrite2;
         

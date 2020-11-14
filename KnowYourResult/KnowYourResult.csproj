@@ -69,6 +69,8 @@
     <Content Include="css\bootstrap-theme.min.css" />
     <Content Include="css\bootstrap.css" />
     <Content Include="css\bootstrap.min.css" />
+    <Content Include="FilterAN.aspx" />
+    <Content Include="FilterMN.aspx" />
     <Content Include="fonts\glyphicons-halflings-regular.eot" />
     <Content Include="fonts\glyphicons-halflings-regular.ttf" />
     <Content Include="fonts\glyphicons-halflings-regular.woff" />
@@ -94,6 +96,9 @@
     <Content Include="js\npm.js" />
     <Content Include="login.aspx" />
     <Content Include="result.png" />
+    <Content Include="sem1AN.aspx" />
+    <Content Include="sem1MN.aspx" />
+    <Content Include="stats1.aspx" />
     <Content Include="Web.config">
       <SubType>Designer</SubType>
     </Content>
@@ -101,6 +106,20 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Classes\Result.cs" />
+    <Compile Include="FilterAN.aspx.cs">
+      <DependentUpon>FilterAN.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="FilterAN.aspx.designer.cs">
+      <DependentUpon>FilterAN.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="FilterMN.aspx.cs">
+      <DependentUpon>FilterMN.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="FilterMN.aspx.designer.cs">
+      <DependentUpon>FilterMN.aspx</DependentUpon>
+    </Compile>
     <Compile Include="GetResult.aspx.cs">
       <DependentUpon>GetResult.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -123,6 +142,27 @@
       <DependentUpon>login.aspx</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="sem1AN.aspx.cs">
+      <DependentUpon>sem1AN.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="sem1AN.aspx.designer.cs">
+      <DependentUpon>sem1AN.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="sem1MN.aspx.cs">
+      <DependentUpon>sem1MN.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="sem1MN.aspx.designer.cs">
+      <DependentUpon>sem1MN.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="stats1.aspx.cs">
+      <DependentUpon>stats1.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="stats1.aspx.designer.cs">
+      <DependentUpon>stats1.aspx</DependentUpon>
+    </Compile>
     <Compile Include="WebForm1.aspx.cs">
       <DependentUpon>WebForm1.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -133,6 +173,7 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
+    <Folder Include="ExcelFile\" />
     <Folder Include="Files\" />
   </ItemGroup>
   <PropertyGroup>

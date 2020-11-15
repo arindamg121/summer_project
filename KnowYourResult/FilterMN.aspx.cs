@@ -11,7 +11,7 @@ namespace KnowYourResult
 {
     public partial class FilterMN : System.Web.UI.Page
     {
-        SqlConnection con = new SqlConnection("Data Source=DESKTOP-CB37CHE\\SQLEXPRESS; Initial Catalog=StudentDetail; Integrated Security=True");
+        SqlConnection con = new SqlConnection("Data Source=REIGNZ\\SQLEXPRESS; Initial Catalog=StudentDetail; Integrated Security=True");
         SqlCommand cmd;
         DataTable dt;
         SqlDataAdapter adpt;

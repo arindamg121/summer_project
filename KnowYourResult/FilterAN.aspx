@@ -41,7 +41,7 @@
         <br />
         <br />
         <br />
-        <asp:GridView ID="GridView1" runat="server" ShowHeaderWhenEmpty="true" EmptyDataText="No Records Found">
+        <asp:GridView ID="GridView1" runat="server" ShowHeaderWhenEmpty="true" ForeColor="#e8e8e8" EmptyDataText="No Records Found">
         </asp:GridView>
     
     </div>

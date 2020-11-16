@@ -28,7 +28,7 @@
             <asp:listitem Text="2019"></asp:listitem>
             </asp:DropDownList>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-            <asp:Label ID="Label2" runat="server" Font-Bold="True" Text="File :"></asp:Label>
+            <asp:Label ID="Label2" runat="server" ForeColor="#e8e8e8" Font-Bold="True" Text="File :"></asp:Label>
 &nbsp;<asp:FileUpload ID="FileUpload1" runat="server" />
 &nbsp;<asp:Button ID="Button1" runat="server" Font-Bold="True" OnClick="Button1_Click" Text="Upload" />
         </p>
@@ -39,7 +39,7 @@
         <p>
             &nbsp;</p>
         <p>
-            <asp:Label ID="Label3" runat="server"></asp:Label>
+            <asp:Label ID="Label3" ForeColor="#e8e8e8" runat="server"></asp:Label>
         </p>
     <div>
     

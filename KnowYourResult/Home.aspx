@@ -25,8 +25,8 @@
 	   }
 	   .menu-bar
 	   {
-	   background:rgb(0,100,0);
-	   text-align: center;
+	   background-color: #222831;
+	   text-align: left;
 	   position: fixed;
 	   top: 0;
 	   width: 100%;
@@ -40,8 +40,8 @@
 	   .menu-bar ul li
 	   {
 	   width: 120px;
-	   margin: 15px;
-	   padding: 15px;
+	   margin: 5px;
+	   padding: 14px 16px;
 	   }
 	   .menu-bar ul li a
 	   {
@@ -50,7 +50,7 @@
 	   }
 	   .active,.menu-bar ul li:hover
 	   {
-	   background: #2bab0d;
+	   background: #30475e;
 	   border-radius: 3px;
 	   }
 	   .menu-bar .fa
@@ -65,7 +65,7 @@
 	   {
 	   display: block;
 	   position: absolute;
-	   background: rgb(0,100,0);
+	   background-color: #222831;
 	   margin-top: 15px;
 	   margin-left:-15px;
 	   }
@@ -89,7 +89,7 @@
 	   }
 	   .menu-bar ul li:hover .sub-menu-1 ul li a:hover
 	   {
-	   color: #b2ff00;
+	   color: #91d18b;
 	   }
 	   .fa-angle-right
 	   {
@@ -105,11 +105,11 @@
 	   display: block;
 	   margin-top: -40px;
 	   margin-left: 140px;
-	   background: rgba(0,100,0)
+	   background-color: #222831;
 	   }
    </style>
 </head>
-<body style="background-image:url('home1.jpg'); background-repeat:no-repeat; background-size: cover">
+<body style="background-image:url('home2.jpg'); background-repeat:no-repeat; background-size: cover">
     <form id="form1" runat="server">
         <div class="container">
         <div class ="container-fluid" style="font-style: normal; font-weight: bold; font-size: large; font-family: Linotte; /*color: #d9ecf2;*/ text-transform: capitalize; /*background-color: #1aa6b7;*/" title="KnowYourResult" >

@@ -4,9 +4,9 @@
 
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head runat="server">
-    <title></title>
+    <title>Sem 1 Afternoon</title>
 </head>
-<body>
+<body style="background-color: #ce6262;">
     <p>
         <br />
     </p>
@@ -21,7 +21,7 @@
     <p>
         &nbsp;</p>
     <form id="form1" runat="server">
-        <p style="margin-left: 200px">
+        <p style="color:#e8e8e8;margin-left: 200px">
             <asp:Label ID="Label1" runat="server" Font-Bold="True" Text="Batch :"></asp:Label>
 &nbsp;<asp:DropDownList ID="DropDownList1" runat="server" AutoPostBack="true" OnSelectedIndexChanged="DropDownList1_SelectedIndexChanged">
             <asp:listitem Text="2018"></asp:listitem>

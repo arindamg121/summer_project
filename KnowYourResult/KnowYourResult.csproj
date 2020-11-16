@@ -107,13 +107,6 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Classes\Result.cs" />
-    <Compile Include="dropdown.aspx.cs">
-      <DependentUpon>dropdown.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="dropdown.aspx.designer.cs">
-      <DependentUpon>dropdown.aspx</DependentUpon>
-    </Compile>
     <Compile Include="FilterAN.aspx.cs">
       <DependentUpon>FilterAN.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>

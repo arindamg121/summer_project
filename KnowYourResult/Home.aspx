@@ -126,8 +126,8 @@
 <li class="hover-me"><a href="">Sem1</a><i class="fa fa-angle-right"></i>
 <div class="sub-menu-2">
 <ul>
-<li><a href="">Morning Shift</a></li>
-<li><a href="">Afternoon Shift</a></li>
+<li><a href="sem1MN.aspx">Morning Shift</a></li>
+<li><a href="sem1AN.aspx">Afternoon Shift</a></li>
 </ul>
 </div></li>
 
@@ -176,14 +176,14 @@
 <li><a href=""><i class="fa fa-search">SEARCH</i></a>
 <div class="sub-menu-1">
 <ul>
-<li><a href="">Morning Shift</a></li>
-<li><a href="">Afternoon Shift</a></li>
+<li><a href="FilterMN.aspx">Morning Shift</a></li>
+<li><a href="FilterAN.aspx">Afternoon Shift</a></li>
 </ul>
 </div></li>
 <li><a href=""><i class="fa fa-bar-chart">STATSTICS</i></a>
 <div class="sub-menu-1">
 <ul>
-<li><a href="">Sem1</a></li>
+<li><a href="stats1.aspx">Sem1</a></li>
 <li><a href="">Sem2</a></li>
 <li><a href="">Sem3</a></li>
 <li><a href="">Sem4</a></li>

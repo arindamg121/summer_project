@@ -27,7 +27,7 @@ message.place(x=200,y=20)
 message = tk.Label(window, text="Attendance Portal",bg="#FF9A8C",fg="black",width=40,height=1,font=('Times New Roman',35,'bold underline'))
 message.place(x=200,y=80)
 
-lbl = tk.Label(window,text="Enter Your College ID",width=20,height=2,fg="black",bg="#FF9A8C",font=('Times New Roman',25,'bold'))
+lbl = tk.Label(window,text="Enter Your Roll No",width=20,height=2,fg="black",bg="#FF9A8C",font=('Times New Roman',25,'bold'))
 lbl.place(x=200-x_cord,y=200-y_cord)
 
 txt = tk.Entry(window,width=30,bg="white",fg="blue",font=('Times New Roman',15,'bold'))
@@ -87,22 +87,22 @@ def is_number(s):
     return False
 
 def TakeImages():
-    Id=(txt.get())
+    roll_no=(txt.get())
     name=(txt2.get())
-    if not Id:
-        res="Please enter Id"
+    if not roll_no:
+        res="Please Enter Roll No"
         message.configure(text = res)
         MsgBox = tk.messagebox.askquestion ("Warning","Please enter roll number properly , press yes if you understood",icon = 'warning')
         if MsgBox == 'no':
             tk.messagebox.showinfo('Your need','Please go through the readme file properly')
     elif not name:
-        res="Please enter Name"
+        res="Please Enter Name"
         message.configure(text = res)
         MsgBox = tk.messagebox.askquestion ("Warning","Please enter your name properly , press yes if you understood",icon = 'warning')
         if MsgBox == 'no':
             tk.messagebox.showinfo('Your need','Please go through the readme file properly')
 
-    elif(is_number(Id) and name.isalpha()):
+    elif(is_number(roll_no) and name.isalpha()):
             cam = cv2.VideoCapture(0)
             harcascadePath = "haarcascade_frontalface_default.xml"
             detector=cv2.CascadeClassifier(harcascadePath)
@@ -116,7 +116,7 @@ def TakeImages():
                     #incrementing sample number
                     sampleNum=sampleNum+1
                     #saving the captured face in the dataset folder TrainingImage
-                    cv2.imwrite("TrainingImage\ "+name +"."+Id +'.'+ str(sampleNum) + ".jpg", gray[y:y+h,x:x+w])
+                    cv2.imwrite("TrainingImage\ "+name +"."+roll_no +'.'+ str(sampleNum) + ".jpg", gray[y:y+h,x:x+w])
                     #display the frame
                     cv2.imshow('frame',img)
                 #wait for 100 miliseconds
@@ -127,25 +127,25 @@ def TakeImages():
                     break
             cam.release()
             cv2.destroyAllWindows()
-            res = "Images Saved for ID : " + Id +" Name : "+ name
-            row = [Id , name]
+            res = "Images Saved for Roll No : " + roll_no +" Name : "+ name
+            row = [roll_no , name]
             with open('StudentDetails\StudentDetails.csv','a+') as csvFile:
                 writer = csv.writer(csvFile)
                 writer.writerow(row)
             csvFile.close()
             message.configure(text= res)
     else:
-        if(is_number(Id)):
+        if(is_number(roll_no)):
             res = "Enter Alphabetical Name"
             message.configure(text= res)
         if(name.isalpha()):
-            res = "Enter Numeric Id"
+            res = "Enter Numeric Roll No"
             message.configure(text= res)
 
 def TrainImages():
     recognizer = cv2.face_LBPHFaceRecognizer.create()
-    faces,Id = getImagesAndLabels("TrainingImage")
-    recognizer.train(faces, np.array(Id))
+    faces,roll_no = getImagesAndLabels("TrainingImage")
+    recognizer.train(faces, np.array(roll_no))
     recognizer.save("TrainingImageLabel\Trainner.yml")
     res = "Image Trained"
     clear1();
@@ -166,11 +166,11 @@ def getImagesAndLabels(path):
         pilImage=Image.open(imagePath).convert('L')
         #Now we are converting the PIL image into numpy array
         imageNp=np.array(pilImage,'uint8')
-        #getting the Id from the image
-        Id=int(os.path.split(imagePath)[-1].split(".")[1])
+        #getting the roll no from the image
+        roll_no=int(os.path.split(imagePath)[-1].split(".")[1])
         # extract the face from the training image sample
         faces.append(imageNp)
-        Ids.append(Id)
+        Ids.append(roll_no)
     return faces,Ids
 
 def TrackImages():
@@ -181,7 +181,7 @@ def TrackImages():
     df=pd.read_csv("StudentDetails\StudentDetails.csv")
     cam = cv2.VideoCapture(0)
     font = cv2.FONT_HERSHEY_SIMPLEX
-    col_names =  ['Id','Name','Date','Time']
+    col_names =  ['Roll No','Name','Date','Time']
     attendance = pd.DataFrame(columns = col_names)
     while True:
         ret, im =cam.read()
@@ -189,23 +189,23 @@ def TrackImages():
         faces=faceCascade.detectMultiScale(gray, 1.2,5)
         for(x,y,w,h) in faces:
             cv2.rectangle(im,(x,y),(x+w,y+h),(225,0,0),2)
-            Id, conf = recognizer.predict(gray[y:y+h,x:x+w])
+            roll_no, conf = recognizer.predict(gray[y:y+h,x:x+w])
             if(conf < 50):
                 ts = time.time()
                 date = datetime.datetime.fromtimestamp(ts).strftime('%Y-%m-%d')
                 timeStamp = datetime.datetime.fromtimestamp(ts).strftime('%H:%M:%S')
-                aa=df.loc[df['Id'] == Id]['Name'].values
-                tt=str(Id)+"-"+aa
-                attendance.loc[len(attendance)] = [Id,aa,date,timeStamp]
+                aa=df.loc[df['Roll No'] == roll_no]['Name'].values
+                tt=str(roll_no)+"-"+aa
+                attendance.loc[len(attendance)] = [roll_no,aa,date,timeStamp]
 
             else:
-                Id='Unknown'
-                tt=str(Id)
+                roll_no='Unknown'
+                tt=str(roll_no)
             if(conf > 75):
                 noOfFile=len(os.listdir("ImagesUnknown"))+1
                 cv2.imwrite("ImagesUnknown\Image"+str(noOfFile) + ".jpg", im[y:y+h,x:x+w])
             cv2.putText(im,str(tt),(x,y+h), font, 1,(255,255,255),2)
-        attendance=attendance.drop_duplicates(subset=['Id'],keep='first')
+        attendance=attendance.drop_duplicates(subset=['Roll No'],keep='first')
         cv2.imshow('im',im)
         if (cv2.waitKey(1)==ord('q')):
             break
@@ -241,7 +241,7 @@ trainImg = tk.Button(window,text="Model Training Button",command=TrainImages,fg=
 trainImg.place(x=645-x_cord,y=425-y_cord)
 trackImg = tk.Button(window,text="Attendance Marking Button",command=TrackImages,fg="white",bg="red",width=30,height=2,activebackground = "#FF9A8C",font=('Times New Roman',15,'bold'))
 trackImg.place(x=1075-x_cord,y=425-y_cord)
-send_mail = tk.Button(window,text="Send Mail",command=send_mail,fg="white",bg="red",width=10,height=2,activebackground = "#FF9A8C",font=('Times New Roman',15,'bold'))
+send_mail = tk.Button(window,text="Send Mail",command=send_mail,fg="white",bg="blue",width=10,height=2,activebackground = "#FF9A8C",font=('Times New Roman',15,'bold'))
 send_mail.place(x=600,y=735-y_cord)
 quitWindow = tk.Button(window,text="Quit",command=quit_window,fg="white",bg="red",width=10,height=2,activebackground = "#FF9A8C",font=('Times New Roman',15,'bold'))
 quitWindow.place(x=800,y=735-y_cord)

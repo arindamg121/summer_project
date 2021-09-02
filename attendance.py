@@ -364,7 +364,7 @@ def TrackImages():
     col_names = ["Roll No", "Name", "Shift", "Date", "Time"]
     attendance = pd.DataFrame(columns=col_names)
     while True:
-        ret, im = cam.read()
+        _, im = cam.read()
         gray = cv2.cvtColor(im, cv2.COLOR_BGR2GRAY)
         faces = faceCascade.detectMultiScale(gray, 1.2, 5)
         for (x, y, w, h) in faces:
@@ -376,8 +376,11 @@ def TrackImages():
                 timeStamp = datetime.datetime.fromtimestamp(ts).strftime(
                     "%H:%M:%S"
                 )
-                aa = df.loc[df["Roll No"] == roll_no]["Name"].values
-                ss = df["Shift"].values
+                first_ = lambda x: x[0]
+
+                aa = first_(df.loc[df["Roll No"] == roll_no]["Name"].values)
+
+                ss = first_(df["Shift"].values)
                 tt = str(roll_no) + "-" + aa
                 attendance.loc[len(attendance)] = [
                     roll_no,

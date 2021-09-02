@@ -8,12 +8,14 @@ pip3 install opencv-python
 pip3 install opencv-contrib-python
 pip3 install wheel
 pip3 install pandas
+pip3 install yagmail
 ```
 
-Once everything is installed and setup create two folders
+Once everything is installed and setup create three folders
 ```
-TrainingImageLabel
-TrainingImage
+mkdir ImagesUnknown
+mkdir TrainingImageLabel
+mkdir TrainingImage
 ```
 Run the program using the following command
 ```

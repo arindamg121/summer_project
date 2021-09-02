@@ -39,26 +39,32 @@ lbl2.place(x=600-x_cord,y=200-y_cord)
 txt2 = tk.Entry(window,width=30,bg="white",fg="blue",font=('Times New Roman',15,'bold'))
 txt2.place(x=650-x_cord,y=300-y_cord)
 
-lbl3 = tk.Label(window, text="Notification",fg="black",bg="#FF9A8C",width=20,height=2,font=('Times New Roman',25,'bold'))
-lbl3.place(x=1060-x_cord,y=200-y_cord)
+lbl3 = tk.Label(window,text="Enter Your Shift",width=20,fg="black",bg="#FF9A8C",height=2,font=('Times New Roman',25,'bold'))
+lbl3.place(x=1005-x_cord,y=200-y_cord)
 
-message = tk.Label(window,text="",bg="white",fg="blue",width=30,height=1,activebackground = "white",font=('Times New Roman',15,'bold'))
-message.place(x=1075-x_cord,y=300-y_cord)
+txt3 = tk.Entry(window,width=30,bg="white",fg="blue",font=('Times New Roman',15,'bold'))
+txt3.place(x=1065-x_cord,y=300-y_cord)
 
-lbl3 = tk.Label(window,text="Attendance",fg="white",bg="lightgreen", width=20,height=2,font=('Times New Roman',30,'bold'))
-lbl3.place(x=120,y=570-y_cord)
+lbl4 = tk.Label(window,text="Notification",fg="black",bg="#FF9A8C",width=20,height=2,font=('Times New Roman',25,'bold'))
+lbl4.place(x=200-x_cord,y=485-y_cord)
+
+message = tk.Label(window,text="",bg="white",fg="blue",width=66,height=2,activebackground = "white",font=('Times New Roman',15,'bold'))
+message.place(x=645-x_cord,y=500-y_cord)
+
+lbl5 = tk.Label(window,text="Attendance",fg="white",bg="lightgreen", width=20,height=2,font=('Times New Roman',30,'bold'))
+lbl5.place(x=120,y=570-y_cord)
 
 message2 = tk.Label(window, text="",fg="red",bg="yellow",activeforeground = "green",width=60,height=4,font=('times',15,'bold'))
 message2.place(x=700,y=570-y_cord)
 
-lbl4 = tk.Label(window,text="Step 1",width=20,fg="green",bg="#FF9A8C",height=2,font=('Times New Roman',20,'bold'))
-lbl4.place(x=240-x_cord,y=375-y_cord)
+lbl6 = tk.Label(window,text="Step 1",width=20,fg="green",bg="#FF9A8C",height=2,font=('Times New Roman',20,'bold'))
+lbl6.place(x=240-x_cord,y=375-y_cord)
 
-lbl5 = tk.Label(window,text="Step 2",width=20,fg="green",bg="#FF9A8C",height=2,font=('Times New Roman',20,'bold'))
-lbl5.place(x=645-x_cord,y=375-y_cord)
+lbl7 = tk.Label(window,text="Step 2",width=20,fg="green",bg="#FF9A8C",height=2,font=('Times New Roman',20,'bold'))
+lbl7.place(x=645-x_cord,y=375-y_cord)
 
-lbl6 = tk.Label(window,text="Step 3",width=20 ,fg="green",bg="#FF9A8C",height=2,font=('Times New Roman',20,'bold'))
-lbl6.place(x=1100-x_cord,y=375-y_cord)
+lbl8 = tk.Label(window,text="Step 3",width=20 ,fg="green",bg="#FF9A8C",height=2,font=('Times New Roman',20,'bold'))
+lbl8.place(x=1100-x_cord,y=375-y_cord)
 
 def clear1():
     txt.delete(0, 'end')
@@ -89,6 +95,7 @@ def is_number(s):
 def TakeImages():
     roll_no=(txt.get())
     name=(txt2.get())
+    shift=(txt3.get())
     if not roll_no:
         res="Please Enter Roll No"
         message.configure(text = res)
@@ -101,8 +108,14 @@ def TakeImages():
         MsgBox = tk.messagebox.askquestion ("Warning","Please enter your name properly , press yes if you understood",icon = 'warning')
         if MsgBox == 'no':
             tk.messagebox.showinfo('Your need','Please go through the readme file properly')
+    elif not shift:
+        res="Please Enter Shift"
+        message.configure(text = res)
+        MsgBox = tk.messagebox.askquestion ("Warning","Please enter your shift properly , press yes if you understood",icon = 'warning')
+        if MsgBox == 'no':
+            tk.messagebox.showinfo('Your need','Please go through the readme file properly')
 
-    elif(is_number(roll_no) and name.isalpha()):
+    elif(is_number(roll_no) , name.isalpha() and shift.isalpha()):
             cam = cv2.VideoCapture(0)
             harcascadePath = "haarcascade_frontalface_default.xml"
             detector=cv2.CascadeClassifier(harcascadePath)
@@ -127,8 +140,8 @@ def TakeImages():
                     break
             cam.release()
             cv2.destroyAllWindows()
-            res = "Images Saved for Roll No : " + roll_no +" Name : "+ name
-            row = [roll_no , name]
+            res = "Images Saved for Roll No : " + roll_no +" Name : "+ name +" Shift : "+ shift
+            row = [roll_no , name , shift]
             with open('StudentDetails\StudentDetails.csv','a+') as csvFile:
                 writer = csv.writer(csvFile)
                 writer.writerow(row)
@@ -140,6 +153,9 @@ def TakeImages():
             message.configure(text= res)
         if(name.isalpha()):
             res = "Enter Numeric Roll No"
+            message.configure(text= res)
+        if(shift.isalpha()):
+            res = "Enter Alphabetical Shift"
             message.configure(text= res)
 
 def TrainImages():
@@ -181,7 +197,7 @@ def TrackImages():
     df=pd.read_csv("StudentDetails\StudentDetails.csv")
     cam = cv2.VideoCapture(0)
     font = cv2.FONT_HERSHEY_SIMPLEX
-    col_names =  ['Roll No','Name','Date','Time']
+    col_names =  ['Roll No','Name','Shift','Date','Time']
     attendance = pd.DataFrame(columns = col_names)
     while True:
         ret, im =cam.read()
@@ -195,8 +211,9 @@ def TrackImages():
                 date = datetime.datetime.fromtimestamp(ts).strftime('%Y-%m-%d')
                 timeStamp = datetime.datetime.fromtimestamp(ts).strftime('%H:%M:%S')
                 aa=df.loc[df['Roll No'] == roll_no]['Name'].values
+                ss = df['Shift'].values
                 tt=str(roll_no)+"-"+aa
-                attendance.loc[len(attendance)] = [roll_no,aa,date,timeStamp]
+                attendance.loc[len(attendance)] = [roll_no,aa,ss,date,timeStamp]
 
             else:
                 roll_no='Unknown'

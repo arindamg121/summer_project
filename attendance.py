@@ -197,6 +197,12 @@ def clear2():
     message.configure(text=res)
 
 
+def clear3():
+    txt3.delete(0, "end")
+    res = ""
+    message.configure(text=res)
+
+
 def is_number(s):
     try:
         float(s)
@@ -324,6 +330,7 @@ def TrainImages():
     res = "Image Trained"
     clear1()
     clear2()
+    clear3()
     message.configure(text=res)
     tk.messagebox.showinfo(
         "Completed", "Your model has been trained successfully!!"

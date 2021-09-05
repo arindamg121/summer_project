@@ -435,7 +435,7 @@ def send_mail():
     )
     if MsgBox == "yes":
         tk.messagebox.showinfo("Send Mail", "Mail has been sent")
-        os.system("py automail.py")
+        os.system("python3 automail.py")
 
 
 def quit_window():

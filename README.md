@@ -9,6 +9,7 @@ pip3 install opencv-contrib-python
 pip3 install wheel
 pip3 install pandas
 pip3 install yagmail
+pip3 install pillow
 ```
 
 Once everything is installed and setup create three folders
